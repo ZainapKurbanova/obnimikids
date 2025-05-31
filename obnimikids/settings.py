@@ -61,11 +61,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'obnimikids.wsgi.application'
 
-# Database
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('DB_NAME', 'obnimikids_db'),
+        'USER': os.getenv('DB_USER', 'obnimikids_user'),
+        'PASSWORD': os.getenv('DB_PASSWORD', 'G4dE5DZV6i2x3DSHEoKdn8jQZx3GHh1S'),
+        'HOST': os.getenv('DB_HOST', 'dpg-d0tmti3e5dus7382hq70-a'),
+        'PORT': os.getenv('DB_PORT', '5432'),
     }
 }
 
