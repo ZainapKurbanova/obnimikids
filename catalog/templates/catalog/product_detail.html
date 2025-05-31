@@ -1,0 +1,90 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}OBNIMI Kids - {{ product.name }}{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'catalog/css/product_detail.css' %}">
+    <link rel="stylesheet" href="{% static 'cart/css/common.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section class="product-detail-section">
+        <div class="product-detail-container">
+            {% if messages %}
+                <div id="alert-messages" style="display: none;">
+                    {% for message in messages %}
+                        <div class="alert-message {{ message.tags }}" data-type="{% if 'успешно оформлен' in message %}order_success{% else %}cart_action{% endif %}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <div class="product-detail-grid">
+                <div class="product-image-container">
+                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'catalog/images/default.png' %}{% endif %}" alt="{{ product.name }}" class="product-detail-image" id="product-image">
+                </div>
+                <div class="product-info">
+                    <h2>{{ product.name }} ({{ product.color }})</h2>
+                    <div class="price-container">
+                        {% if product.old_price %}
+                            <p class="old-price">{{ product.old_price }} ₽</p>
+                            <p class="price">{{ product.price }} ₽</p>
+                        {% else %}
+                            <p class="price">{{ product.price }} ₽</p>
+                        {% endif %}
+                    </div>
+                    <form method="post" action="{% url 'add_to_cart' product.id %}" class="add-to-cart-form">
+                        {% csrf_token %}
+                        <input type="hidden" name="color" value="{{ product.color }}">
+                        <div class="size-selector">
+                            <p>Размеры:</p>
+                            <div class="size-buttons">
+                                {% for size in product.sizes.all %}
+                                    <input type="radio" id="size_{{ size.name }}" name="size" value="{{ size.name }}" required>
+                                    <label for="size_{{ size.name }}" class="size-btn">{{ size.name }}</label>
+                                {% empty %}
+                                    <p>Размеры отсутствуют</p>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="quantity-selector">
+                            <p>Количество:</p>
+                            <div class="quantity-controls">
+                                <button type="button" class="quantity-btn" onclick="updateQuantity(-1)">-</button>
+                                <input type="number" name="quantity" id="quantity" value="1" min="1" readonly>
+                                <button type="button" class="quantity-btn" onclick="updateQuantity(1)">+</button>
+                            </div>
+                        </div>
+                        <button type="submit" class="add-to-cart-btn">Добавить в корзину</button>
+                        <button type="button" class="more-details-btn" onclick="toggleDetails()">Подробнее</button>
+                    </form>
+                    <div class="details-content" id="details-content">
+                        <p>{{ product.description|linebreaksbr }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        function updateQuantity(change) {
+            let quantityInput = document.getElementById('quantity');
+            let currentValue = parseInt(quantityInput.value);
+            let newValue = currentValue + change;
+            if (newValue >= 1) {
+                quantityInput.value = newValue;
+            }
+        }
+
+        function toggleDetails() {
+            let details = document.getElementById('details-content');
+            if (details.style.display === 'block') {
+                details.style.display = 'none';
+            } else {
+                details.style.display = 'block';
+            }
+        }
+    </script>
+    <script src="{% static 'cart/js/common.js' %}"></script>
+{% endblock %}

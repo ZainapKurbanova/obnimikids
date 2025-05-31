@@ -1,0 +1,342 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}OBNIMI Kids - Профиль{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@geoapify/geocoder-autocomplete@0.1.1/dist/style.min.css">
+    <link rel="stylesheet" href="{% static 'accounts/css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section class="profile-section">
+        <div class="profile-container glass-effect">
+            <h2>Мой профиль</h2>
+            {% if messages %}
+                <div id="alert-messages" style="display: none;">
+                    {% for message in messages %}
+                        <div class="alert-message {{ message.tags }}" data-type="profile_update">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% if user.is_authenticated %}
+                <!-- Вкладки -->
+                <div class="profile-tabs">
+                    <button class="tab-button active" data-tab="personal-info">Личная информация</button>
+                    <button class="tab-button" data-tab="orders">Мои покупки</button>
+                </div>
+
+                <!-- Контент вкладок -->
+                <!-- Вкладка "Личная информация" -->
+                <div class="tab-content active" id="personal-info">
+                    <form method="post" class="profile-form">
+                        {% csrf_token %}
+                        <div class="profile-info">
+                            <h3>Личная информация</h3>
+                            <!-- Отображение общих ошибок формы -->
+                            {% if form.errors %}
+                                {% for field in form %}
+                                    {% for error in field.errors %}
+                                        <p class="error">{{ error }}</p>
+                                    {% endfor %}
+                                {% endfor %}
+                                {% for error in form.non_field_errors %}
+                                    <p class="error">{{ error }}</p>
+                                {% endfor %}
+                            {% endif %}
+                            <div class="form-group">
+                                <label for="id_email">* Email</label>
+                                {{ form.email }}
+                            </div>
+                            <div class="form-group">
+                                <label for="id_first_name">* Имя</label>
+                                {{ form.first_name }}
+                            </div>
+                            <div class="form-group">
+                                <label for="id_last_name">* Фамилия</label>
+                                {{ form.last_name }}
+                            </div>
+                            <div class="form-group">
+                                <label>Пол</label>
+                                <div class="gender-selector">
+                                    <ul>
+                                        <li>
+                                            <input type="radio" name="gender" id="id_gender_0" value="M" {% if form.gender.value == 'M' %}checked{% endif %}>
+                                            <label for="id_gender_0">Мужчина</label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" name="gender" id="id_gender_1" value="F" {% if form.gender.value == 'F' %}checked{% endif %}>
+                                            <label for="id_gender_1">Женщина</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="id_birth_date">Дата рождения</label>
+                                {{ form.birth_date }}
+                            </div>
+                            <div class="form-group">
+                                <label for="id_city">Город</label>
+                                <div class="autocomplete-wrapper">
+                                    {{ form.city }}
+                                    <input type="hidden" name="selected_city" id="id_selected_city" value="">
+                                    <div class="suggestions" id="city-suggestions" style="display: none;"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="id_phone">Контакты</label>
+                                {{ form.phone }}
+                            </div>
+                        </div>
+                        <button type="submit" class="profile-btn" id="submit-btn">Сохранить</button>
+                    </form>
+                </div>
+
+                <!-- Вкладка "Мои покупки" -->
+                <div class="tab-content" id="orders">
+                    <div class="orders-list">
+                        {% if orders %}
+                            {% for order in orders %}
+                                <div class="order-item">
+                                    <div class="order-header">
+                                        <span class="order-number">№ {{ order.id }}</span>
+                                        <span class="order-status {{ order.status }}">{{ order.status_display }}</span>
+                                    </div>
+                                    <div class="order-dates">
+                                        <span>{{ order.created_at|date:"d M" }}</span>
+                                        <span>—</span>
+                                        <span>{{ order.created_at|date:"d M" }}</span>
+                                    </div>
+                                    <div class="order-items">
+                                        {% for item in order.items.all %}
+                                            <img src="{% if item.product.image %}{{ item.product.image.url }}{% else %}/static/images/default-product.jpg{% endif %}" alt="{{ item.product.name }}" class="order-item-image">
+                                        {% endfor %}
+                                    </div>
+                                    <div class="order-total">
+                                        <span>Сумма</span>
+                                        <span>{{ order.total_price }} ₽</span>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <p class="no-orders">У вас пока нет заказов.</p>
+                        {% endif %}
+                    </div>
+                </div>
+                <a href="{% url 'logout' %}" class="profile-link">Выйти</a>
+            {% else %}
+                <p>Вы не авторизованы. <a href="{% url 'login' %}">Войдите</a> или <a href="{% url 'register' %}">зарегистрируйтесь</a>.</p>
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}
+{% block scripts %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const birthDateInput = document.getElementById('id_birth_date');
+            if (birthDateInput) {
+                if (!birthDateInput.value) {
+                    birthDateInput.removeAttribute('placeholder');
+                } else {
+                    const dateValue = birthDateInput.value;
+                    const dateParts = dateValue.split('.');
+                    if (dateParts.length === 3) {
+                        const formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
+                        birthDateInput.value = formattedDate;
+                    }
+                }
+            }
+
+            // Логика переключения вкладок
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    button.classList.add('active');
+                    const tabId = button.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+
+            // Кастомное автозаполнение для городов
+            const cityInput = document.getElementById('id_city');
+            const suggestionsContainer = document.getElementById('city-suggestions');
+            const selectedCityInput = document.getElementById('id_selected_city');
+            let selectedCity = null;
+            let activeSuggestionIndex = -1;
+
+            if (cityInput && suggestionsContainer && selectedCityInput) {
+                console.log('Автозаполнение инициализировано для поля id_city');
+
+                // Функция для получения предложений через DaData API
+                const fetchSuggestions = async (query) => {
+                    if (!query || query.length < 1) {
+                        suggestionsContainer.style.display = 'none';
+                        console.log('Запрос слишком короткий:', query);
+                        return;
+                    }
+
+                    const url = 'https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address';
+                    const token = '79da688188c12cf893b72df07cbca7bc42e54cec';
+                    const requestOptions = {
+                        method: 'POST',
+                        mode: 'cors',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json',
+                            'Authorization': 'Token ' + token
+                        },
+                        body: JSON.stringify({
+                            query: query,
+                            count: 10,
+                            locations: [{ country: 'Россия' }],
+                            restrict_value: true,
+                            type: 'CITY'
+                        })
+                    };
+
+                    try {
+                        const response = await fetch(url, requestOptions);
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! Status: ${response.status}`);
+                        }
+                        const data = await response.json();
+                        console.log('Полученные данные:', data);
+                        const citySuggestions = data.suggestions.filter(suggestion => suggestion.data.city);
+                        displaySuggestions(citySuggestions.map(suggestion => ({
+                            properties: { city: suggestion.data.city }
+                        })));
+                    } catch (error) {
+                        console.error('Ошибка при запросе предложений:', error);
+                        suggestionsContainer.style.display = 'none';
+                    }
+                };
+
+                // Функция для отображения предложений
+                const displaySuggestions = (features) => {
+                    suggestionsContainer.innerHTML = '';
+                    if (features.length === 0) {
+                        suggestionsContainer.style.display = 'none';
+                        console.log('Нет предложений для отображения');
+                        return;
+                    }
+
+                    console.log('Отображение предложений:', features);
+                    features.forEach((feature, index) => {
+                        const cityName = feature.properties.city;
+                        const suggestionItem = document.createElement('div');
+                        suggestionItem.classList.add('suggestion-item');
+                        suggestionItem.textContent = cityName;
+                        suggestionItem.dataset.city = cityName;
+
+                        suggestionItem.addEventListener('click', () => {
+                            selectedCity = cityName;
+                            cityInput.value = selectedCity;
+                            selectedCityInput.value = selectedCity;
+                            suggestionsContainer.style.display = 'none';
+                            activeSuggestionIndex = -1;
+                            console.log('Выбран город (клик):', selectedCity);
+                        });
+
+                        suggestionItem.addEventListener('mouseover', () => {
+                            activeSuggestionIndex = index;
+                            updateActiveSuggestion();
+                        });
+
+                        suggestionsContainer.appendChild(suggestionItem);
+                    });
+
+                    suggestionsContainer.style.display = 'block';
+                    activeSuggestionIndex = -1;
+                };
+
+                // Обработчик ввода текста
+                let debounceTimeout;
+                cityInput.addEventListener('input', () => {
+                    clearTimeout(debounceTimeout);
+                    debounceTimeout = setTimeout(() => {
+                        selectedCity = null;
+                        selectedCityInput.value = '';
+                        fetchSuggestions(cityInput.value);
+                    }, 500);
+                });
+
+                // Обработка клавиш (стрелки и Enter)
+                cityInput.addEventListener('keydown', (e) => {
+                    const suggestionItems = suggestionsContainer.querySelectorAll('.suggestion-item');
+                    if (!suggestionItems.length) return;
+
+                    switch (e.key) {
+                        case 'ArrowDown':
+                            e.preventDefault();
+                            activeSuggestionIndex = Math.min(activeSuggestionIndex + 1, suggestionItems.length - 1);
+                            updateActiveSuggestion();
+                            break;
+                        case 'ArrowUp':
+                            e.preventDefault();
+                            activeSuggestionIndex = Math.max(activeSuggestionIndex - 1, 0);
+                            updateActiveSuggestion();
+                            break;
+                        case 'Enter':
+                            e.preventDefault();
+                            if (activeSuggestionIndex >= 0 && activeSuggestionIndex < suggestionItems.length) {
+                                const cityName = suggestionItems[activeSuggestionIndex].dataset.city;
+                                selectedCity = cityName;
+                                cityInput.value = selectedCity;
+                                selectedCityInput.value = selectedCity;
+                                suggestionsContainer.style.display = 'none';
+                                activeSuggestionIndex = -1;
+                                console.log('Выбран город (Enter):', selectedCity);
+                            }
+                            break;
+                        case 'Escape':
+                            suggestionsContainer.style.display = 'none';
+                            activeSuggestionIndex = -1;
+                            break;
+                    }
+                });
+
+                // Обновление активного элемента
+                const updateActiveSuggestion = () => {
+                    const suggestionItems = suggestionsContainer.querySelectorAll('.suggestion-item');
+                    suggestionItems.forEach((item, index) => {
+                        item.classList.toggle('active', index === activeSuggestionIndex);
+                    });
+                    if (activeSuggestionIndex >= 0) {
+                        suggestionItems[activeSuggestionIndex].scrollIntoView({ block: 'nearest' });
+                    }
+                };
+
+                // Очистка при снятии фокуса
+                cityInput.addEventListener('blur', () => {
+                    setTimeout(() => {
+                        if (!selectedCity) {
+                            cityInput.value = '';
+                            selectedCityInput.value = '';
+                            console.log('Поле очищено');
+                        } else {
+                            cityInput.value = selectedCity;
+                            selectedCityInput.value = selectedCity;
+                        }
+                        suggestionsContainer.style.display = 'none';
+                        activeSuggestionIndex = -1;
+                    }, 200);
+                });
+
+                // Закрытие списка при клике вне поля
+                document.addEventListener('click', (e) => {
+                    if (!cityInput.contains(e.target) && !suggestionsContainer.contains(e.target)) {
+                        suggestionsContainer.style.display = 'none';
+                        activeSuggestionIndex = -1;
+                    }
+                });
+            } else {
+                console.error('Не удалось найти элементы cityInput, suggestionsContainer, selectedCityInput или submitBtn');
+            }
+        });
+    </script>
+{% endblock %}

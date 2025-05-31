@@ -1,0 +1,1 @@
+web: gunicorn obnimikids.wsgi:application --log-file -

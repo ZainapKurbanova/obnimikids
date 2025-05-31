@@ -1,0 +1,128 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}OBNIMI Kids - Корзина{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'cart/css/cart.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section class="cart-section">
+        <div class="cart-container">
+            <h2>Ваша корзина</h2>
+            {% if cart_items %}
+                <div class="cart-items">
+                    {% for item in cart_items %}
+                        <div class="cart-item" data-item-id="{{ item.id }}">
+                            <div class="cart-item-image">
+                                {% if item.product.image %}
+                                    <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                {% else %}
+                                    <img src="{% static 'catalog/images/default.png' %}" alt="Default Image">
+                                {% endif %}
+                            </div>
+                            <div class="cart-item-info">
+                                <h3>{{ item.product.name }}</h3>
+                                <p>Размер: {{ item.size.name }}</p>
+                                <p>Количество: <span class="quantity-value">{{ item.quantity }}</span></p>
+                                <p>Цена: {{ item.product.price }} ₽</p>
+                                <p>Итого: <span class="item-total-price">{{ item.get_total_price }} ₽</span></p>
+                            </div>
+                            <div class="cart-item-actions">
+                                <div class="quantity-controls">
+                                    <button type="button" class="quantity-btn" onclick="updateQuantity({{ item.id }}, -1)">-</button>
+                                    <span class="quantity-value">{{ item.quantity }}</span>
+                                    <button type="button" class="quantity-btn" onclick="updateQuantity({{ item.id }}, 1)">+</button>
+                                </div>
+                                <button class="remove-btn" onclick="removeItem({{ item.id }})">×</button>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="cart-summary">
+                    <div class="summary-details">
+                        <p>Состав заказа:</p>
+                        <p>Товаров: <span class="cart-item-count">{{ cart_items|length }}</span></p>
+                        <p>Итого: <span class="total-price">{{ total_price }} ₽</span></p>
+                    </div>
+                    <a href="{% url 'checkout' %}" class="checkout-btn">Оформить заказ</a>
+                </div>
+            {% else %}
+                <p class="empty-cart">Ваша корзина пуста.</p>
+            {% endif %}
+        </div>
+    </section>
+
+    {% block scripts %}
+    <script>
+        function updateQuantity(itemId, change) {
+            let cartItem = document.querySelector(`.cart-item[data-item-id="${itemId}"]`);
+            let quantityElement = cartItem.querySelector('.quantity-value');
+            let currentValue = parseInt(quantityElement.textContent);
+            let newValue = currentValue + change;
+
+            if (newValue < 1) {
+                removeItem(itemId);
+                return;
+            }
+
+            fetch(`/cart/update_quantity/${itemId}/`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}'
+                },
+                body: JSON.stringify({ quantity: newValue })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    quantityElement.textContent = newValue;
+                    let itemTotalPrice = cartItem.querySelector('.item-total-price');
+                    itemTotalPrice.textContent = `${data.item_total_price} ₽`;
+                    document.querySelector('.total-price').textContent = `${data.total_price} ₽`;
+                    document.querySelector('.cart-item-count').textContent = data.item_count;
+                } else {
+                    alert('Ошибка при обновлении количества: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+                alert('Произошла ошибка при обновлении количества.');
+            });
+        }
+
+        function removeItem(itemId) {
+            if (confirm('Удалить товар из корзины?')) {
+                fetch(`/cart/remove_item/${itemId}/`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': '{{ csrf_token }}'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        let cartItem = document.querySelector(`.cart-item[data-item-id="${itemId}"]`);
+                        cartItem.remove();
+                        let cartItems = document.querySelectorAll('.cart-item');
+                        document.querySelector('.cart-item-count').textContent = cartItems.length;
+                        document.querySelector('.total-price').textContent = `${data.total_price} ₽`;
+                        if (cartItems.length === 0) {
+                            document.querySelector('.cart-container').innerHTML = '<p class="empty-cart">Ваша корзина пуста.</p>';
+                        }
+                    } else {
+                        alert('Ошибка при удалении товара: ' + data.error);
+                    }
+                })
+                .catch(error => {
+                    console.error('Ошибка:', error);
+                    alert('Произошла ошибка при удалении товара.');
+                });
+            }
+        }
+    </script>
+    {% endblock %}
+{% endblock %}
