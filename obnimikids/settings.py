@@ -85,7 +85,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [BASE_DIR / 'static']  # Папка, где лежат твои CSS/JS файлы
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Папка, куда будут собраны файлы для продакшена
 
 # Media files
 MEDIA_URL = '/media/'
