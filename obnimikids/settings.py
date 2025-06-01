@@ -96,6 +96,8 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-
+if not DEBUG:
+    # В продакшене медиафайлы будут доступны через STATIC_URL
+    MEDIA_URL = STATIC_URL + 'media/'
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
