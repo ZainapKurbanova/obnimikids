@@ -1,22 +1,18 @@
 from pathlib import Path
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+import os
+# Build paths inside the project like this: BASE_DIR / "subdir".
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-xfgn(50^dhqt#m@6e-v@3j9q$squgmvf2)i%e-z0i!p^f@^wb&'
+SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-xfgn(50^dhqt#m@6e-v@3j9q$squgmvf2)i%e-z0i!p^f@^wb&')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'your-app-name.onrender.com']
-
-
-# Application definition
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1,obnimikids.onrender.com,obnimikids.ru,www.obnimikids.ru').split(',')
 
 INSTALLED_APPS = [
     'main',
@@ -34,6 +30,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Добавь перед остальными
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -41,6 +38,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'obnimikids.urls'
 
@@ -62,64 +61,41 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'obnimikids.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'obnimi_kids_db',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'MySQL-8.2',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('DB_NAME', 'obnimikids_db'),
+        'USER': os.getenv('DB_USER', 'obnimikids_user'),
+        'PASSWORD': os.getenv('DB_PASSWORD', 'G4dE5DZV6i2x3DSHEoKdn8jQZx3GHh1S'),
+        'HOST': os.getenv('DB_HOST', 'dpg-d0tmti3e5dus7382hq70-a'),
+        'PORT': os.getenv('DB_PORT', '5432'),
     }
 }
 
-
 # Password validation
-# https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-AUTHENTICATION_BACKENDS = [
-    'accounts.backends.EmailBackend',
-]
-
+AUTHENTICATION_BACKENDS = ['accounts.backends.EmailBackend']
 AUTH_USER_MODEL = 'accounts.CustomUser'
+
 # Internationalization
-# https://docs.djangoproject.com/en/5.1/topics/i18n/
-
 LANGUAGE_CODE = 'ru'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.1/howto/static-files/
-
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / "staticfiles"
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
+STATIC_ROOT = BASE_DIR / 'staticfiles'  
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# Media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+# Default primary key field type
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
