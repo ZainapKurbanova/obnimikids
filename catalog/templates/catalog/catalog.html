@@ -26,9 +26,9 @@ OBNIMI Kids - Каталог
             <div class="product">
                 <div class="product-image-wrapper">
                     {% if product.image %}
-                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-img crop-bottom">
+                        <img src="{{ product.image }}" alt="{{ product.name }}" class="product-img crop-bottom">
                     {% else %}
-                    <img src="{% static 'catalog/images/default.png' %}" alt="Default Image" class="product-img crop-bottom">
+                        <img src="{% static 'catalog/images/default.png' %}" alt="Default Image" class="product-img crop-bottom">
                     {% endif %}
                 </div>
                 <div class="product-info">
