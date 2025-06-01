@@ -11,15 +11,6 @@ OBNIMI Kids - Каталог
 
 {% block content %}
 <section class="products">
-    <div class="products-header">
-        <p class="slogan">Одежда, которая обнимает вашего малыша с любовью</p>
-        <div class="basket-animation">
-            <video autoplay loop muted playsinline class="video-effect">
-                <source src="{% static 'catalog/images/basket_animation2.mp4' %}" type="video/mp4">
-                Ваш браузер не поддерживает видео.
-            </video>
-        </div>
-    </div>
     <div class="product-list">
         {% for product in products %}
         <a href="{% url 'product_detail' product.id %}" class="product-link">
