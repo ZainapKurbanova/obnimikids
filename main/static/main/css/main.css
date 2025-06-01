@@ -160,7 +160,9 @@ header .logo img {
 .catalog-btn:hover i {
     transform: scale(1.1);
 }
-
+.content {
+    padding-top: 0px;
+}
 /* Адаптивность */
 @media (max-width: 768px) {
     .navbar {
