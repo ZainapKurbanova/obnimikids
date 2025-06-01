@@ -173,3 +173,6 @@ body {
         padding-top: 120px; /* Увеличиваем отступ для мобильных */
     }
 }
+.content {
+    padding-top: 120px; 
+}
