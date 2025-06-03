@@ -1,0 +1,2461 @@
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Начало сохранения товара: Платье с завязками из умягченного льна, image_file: bez.jpg
+Путь к файлу: C:\Users\User\PycharmProjects\web-app\obnimikids\media\bez.jpg
+Файл не найден: C:\Users\User\PycharmProjects\web-app\obnimikids\media\bez.jpg
+Начало сохранения товара: Платье с завязками из умягченного льна, image_file: 
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Internal Server Error: /orders/process-order/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py", line 66, in process_order
+    send_mail(subject, message, 'your-email@gmail.com', [email], fail_silently=False)
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\__init__.py", line 88, in send_mail
+    return mail.send()
+           ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 86, in open
+    self.connection = self.connection_class(
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 837, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение
+C:\Users\User\PycharmProjects\web-app\obnimikids\cart\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\cart\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /catalog/1/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\catalog\views.py", line 16, in product_detail
+    return render(request, 'catalog/product_detail.html', {'product': product})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'cart_view' not found. 'cart_view' is not a valid view function or pattern name.
+Not Found: /catalog/add-to-cart/1/
+Not Found: /catalog/add-to-cart/1/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /catalog/add-to-cart/1/
+Watching for file changes with StatReloader
+Not Found: /catalog/add-to-cart/1/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+C:\Users\User\PycharmProjects\web-app\obnimikids\obnimikids\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\favorites\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\favorites\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\favorites\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\favorites\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\obnimikids\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /catalog/1/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\catalog\views.py", line 16, in product_detail
+    return render(request, 'catalog/product_detail.html', {'product': product})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'cart_view' not found. 'cart_view' is not a valid view function or pattern name.
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favourites
+C:\Users\User\PycharmProjects\web-app\obnimikids\favorites\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\favorites\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\catalog\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\catalog\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /catalog/1/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\catalog\views.py", line 20, in product_detail
+    return render(request, 'catalog/product_detail.html', {'product': product, 'is_favorite': is_favorite})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'cart_view' not found. 'cart_view' is not a valid view function or pattern name.
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+C:\Users\User\PycharmProjects\web-app\obnimikids\catalog\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\catalog\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\catalog\views.py changed, reloading.
+Watching for file changes with StatReloader
+Начало сохранения товара: Платье с завязками из умягченного льна, image_file: 
+Начало сохранения товара: Платье с завязками из умягченного льна, image_file: 
+Начало сохранения товара: Платье ярусное из муслина, image_file: 
+Начало сохранения товара: Платье ярусное из муслина, image_file: 
+Начало сохранения товара: Платье с воротником из микровельвета, image_file: 
+Начало сохранения товара: Костюм из муслина, image_file: 
+Начало сохранения товара: Рубашка с классическим отложным воротником из льна, image_file: 
+Начало сохранения товара: Рубашка с классическим отложным воротником из льна, image_file: 
+Начало сохранения товара: Ромпер из муслина, image_file: 
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+C:\Users\User\PycharmProjects\web-app\obnimikids\catalog\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Internal Server Error: /catalog/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\catalog\views.py", line 17, in catalog
+    products = products.filter(Q(name__icontains=search_query))
+                               ^
+NameError: name 'Q' is not defined
+Internal Server Error: /catalog/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\catalog\views.py", line 17, in catalog
+    products = products.filter(Q(name__icontains=search_query))
+                               ^
+NameError: name 'Q' is not defined
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /cart/remove_item/4/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Watching for file changes with StatReloader
+Not Found: /cart/remove_item/9/
+Not Found: /cart/update_quantity/7/
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /cart/remove_item/10/
+Not Found: /cфвбшь
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /cart/update_quantity/11/
+Not Found: /cart/update_quantity/11/
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /checkout
+Not Found: /order/checkout
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Internal Server Error: /catalog/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 244, in _get_session
+    return self._session_cache
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\functional.py", line 251, in inner
+    self._setup()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\functional.py", line 404, in _setup
+    self._wrapped = self._setupfunc()
+                    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\middleware.py", line 37, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+                                            ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\middleware.py", line 17, in get_user
+    request._cached_user = auth.get_user(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\__init__.py", line 209, in get_user
+    user_id = _get_user_session_key(request)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\__init__.py", line 62, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+                                               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 55, in __getitem__
+    return self._session[key]
+           ^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 249, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 55, in load
+    s = self._get_session_from_db()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 34, in _get_session_from_db
+    return self.model.objects.get(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1572, in execute_sql
+    cursor = self.connection.cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 320, in cursor
+    return self._cursor()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 296, in _cursor
+    self.ensure_connection()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\postgresql\base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\psycopg2\__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xdd in position 98: invalid continuation byte
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 244, in _get_session
+    return self._session_cache
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\catalog\views.py", line 21, in catalog
+    return render(request, 'catalog/catalog.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\defaulttags.py", line 320, in render
+    match = condition.eval(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\defaulttags.py", line 886, in eval
+    return self.value.resolve(context, ignore_failures=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 718, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 850, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\functional.py", line 280, in __getattribute__
+    value = super().__getattribute__(name)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\functional.py", line 251, in inner
+    self._setup()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\functional.py", line 404, in _setup
+    self._wrapped = self._setupfunc()
+                    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\middleware.py", line 37, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+                                            ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\middleware.py", line 17, in get_user
+    request._cached_user = auth.get_user(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\__init__.py", line 209, in get_user
+    user_id = _get_user_session_key(request)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\__init__.py", line 62, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+                                               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 55, in __getitem__
+    return self._session[key]
+           ^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 249, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 55, in load
+    s = self._get_session_from_db()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 34, in _get_session_from_db
+    return self.model.objects.get(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1572, in execute_sql
+    cursor = self.connection.cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 320, in cursor
+    return self._cursor()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 296, in _cursor
+    self.ensure_connection()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\postgresql\base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\psycopg2\__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xdd in position 98: invalid continuation byte
+Internal Server Error: /accounts/profile/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 244, in _get_session
+    return self._session_cache
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 57, in _view_wrapper
+    test_pass = test_func(request.user)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 80, in <lambda>
+    lambda u: u.is_authenticated,
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\functional.py", line 251, in inner
+    self._setup()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\functional.py", line 404, in _setup
+    self._wrapped = self._setupfunc()
+                    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\middleware.py", line 37, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+                                            ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\middleware.py", line 17, in get_user
+    request._cached_user = auth.get_user(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\__init__.py", line 209, in get_user
+    user_id = _get_user_session_key(request)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\__init__.py", line 62, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+                                               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 55, in __getitem__
+    return self._session[key]
+           ^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 249, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 55, in load
+    s = self._get_session_from_db()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 34, in _get_session_from_db
+    return self.model.objects.get(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1572, in execute_sql
+    cursor = self.connection.cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 320, in cursor
+    return self._cursor()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 296, in _cursor
+    self.ensure_connection()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\postgresql\base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\psycopg2\__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xdd in position 98: invalid continuation byte
+Internal Server Error: /accounts/profile/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 244, in _get_session
+    return self._session_cache
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 57, in _view_wrapper
+    test_pass = test_func(request.user)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 80, in <lambda>
+    lambda u: u.is_authenticated,
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\functional.py", line 251, in inner
+    self._setup()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\functional.py", line 404, in _setup
+    self._wrapped = self._setupfunc()
+                    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\middleware.py", line 37, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+                                            ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\middleware.py", line 17, in get_user
+    request._cached_user = auth.get_user(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\__init__.py", line 209, in get_user
+    user_id = _get_user_session_key(request)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\__init__.py", line 62, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+                                               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 55, in __getitem__
+    return self._session[key]
+           ^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 249, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 55, in load
+    s = self._get_session_from_db()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 34, in _get_session_from_db
+    return self.model.objects.get(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1572, in execute_sql
+    cursor = self.connection.cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 320, in cursor
+    return self._cursor()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 296, in _cursor
+    self.ensure_connection()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\postgresql\base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\psycopg2\__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xdd in position 98: invalid continuation byte
+Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 244, in _get_session
+    return self._session_cache
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 57, in _view_wrapper
+    test_pass = test_func(request.user)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 80, in <lambda>
+    lambda u: u.is_authenticated,
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\functional.py", line 251, in inner
+    self._setup()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\functional.py", line 404, in _setup
+    self._wrapped = self._setupfunc()
+                    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\middleware.py", line 37, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+                                            ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\middleware.py", line 17, in get_user
+    request._cached_user = auth.get_user(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\__init__.py", line 209, in get_user
+    user_id = _get_user_session_key(request)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\__init__.py", line 62, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+                                               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 55, in __getitem__
+    return self._session[key]
+           ^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 249, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 55, in load
+    s = self._get_session_from_db()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 34, in _get_session_from_db
+    return self.model.objects.get(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1572, in execute_sql
+    cursor = self.connection.cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 320, in cursor
+    return self._cursor()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 296, in _cursor
+    self.ensure_connection()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\postgresql\base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\psycopg2\__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xdd in position 98: invalid continuation byte
+Internal Server Error: /catalog/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 244, in _get_session
+    return self._session_cache
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\functional.py", line 251, in inner
+    self._setup()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\functional.py", line 404, in _setup
+    self._wrapped = self._setupfunc()
+                    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\middleware.py", line 37, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+                                            ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\middleware.py", line 17, in get_user
+    request._cached_user = auth.get_user(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\__init__.py", line 209, in get_user
+    user_id = _get_user_session_key(request)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\__init__.py", line 62, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+                                               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 55, in __getitem__
+    return self._session[key]
+           ^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 249, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 55, in load
+    s = self._get_session_from_db()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 34, in _get_session_from_db
+    return self.model.objects.get(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1572, in execute_sql
+    cursor = self.connection.cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 320, in cursor
+    return self._cursor()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 296, in _cursor
+    self.ensure_connection()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\postgresql\base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\psycopg2\__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xdd in position 98: invalid continuation byte
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 244, in _get_session
+    return self._session_cache
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\catalog\views.py", line 21, in catalog
+    return render(request, 'catalog/catalog.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\defaulttags.py", line 320, in render
+    match = condition.eval(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\defaulttags.py", line 886, in eval
+    return self.value.resolve(context, ignore_failures=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 718, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 850, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\functional.py", line 280, in __getattribute__
+    value = super().__getattribute__(name)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\functional.py", line 251, in inner
+    self._setup()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\functional.py", line 404, in _setup
+    self._wrapped = self._setupfunc()
+                    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\middleware.py", line 37, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+                                            ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\middleware.py", line 17, in get_user
+    request._cached_user = auth.get_user(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\__init__.py", line 209, in get_user
+    user_id = _get_user_session_key(request)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\__init__.py", line 62, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+                                               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 55, in __getitem__
+    return self._session[key]
+           ^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 249, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 55, in load
+    s = self._get_session_from_db()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 34, in _get_session_from_db
+    return self.model.objects.get(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1572, in execute_sql
+    cursor = self.connection.cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 320, in cursor
+    return self._cursor()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 296, in _cursor
+    self.ensure_connection()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\postgresql\base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\psycopg2\__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xdd in position 98: invalid continuation byte
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Watching for file changes with StatReloader
+Internal Server Error: /catalog/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 244, in _get_session
+    return self._session_cache
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\functional.py", line 251, in inner
+    self._setup()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\functional.py", line 404, in _setup
+    self._wrapped = self._setupfunc()
+                    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\middleware.py", line 37, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+                                            ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\middleware.py", line 17, in get_user
+    request._cached_user = auth.get_user(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\__init__.py", line 209, in get_user
+    user_id = _get_user_session_key(request)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\__init__.py", line 62, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+                                               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 55, in __getitem__
+    return self._session[key]
+           ^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 249, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 55, in load
+    s = self._get_session_from_db()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 34, in _get_session_from_db
+    return self.model.objects.get(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1572, in execute_sql
+    cursor = self.connection.cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 320, in cursor
+    return self._cursor()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 296, in _cursor
+    self.ensure_connection()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\postgresql\base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\psycopg2\__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xdd in position 98: invalid continuation byte
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 244, in _get_session
+    return self._session_cache
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\catalog\views.py", line 21, in catalog
+    return render(request, 'catalog/catalog.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\defaulttags.py", line 320, in render
+    match = condition.eval(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\defaulttags.py", line 886, in eval
+    return self.value.resolve(context, ignore_failures=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 718, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 850, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\functional.py", line 280, in __getattribute__
+    value = super().__getattribute__(name)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\functional.py", line 251, in inner
+    self._setup()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\functional.py", line 404, in _setup
+    self._wrapped = self._setupfunc()
+                    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\middleware.py", line 37, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+                                            ^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\middleware.py", line 17, in get_user
+    request._cached_user = auth.get_user(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\__init__.py", line 209, in get_user
+    user_id = _get_user_session_key(request)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\__init__.py", line 62, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+                                               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 55, in __getitem__
+    return self._session[key]
+           ^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 249, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 55, in load
+    s = self._get_session_from_db()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 34, in _get_session_from_db
+    return self.model.objects.get(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1572, in execute_sql
+    cursor = self.connection.cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 320, in cursor
+    return self._cursor()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 296, in _cursor
+    self.ensure_connection()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\backends\postgresql\base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\psycopg2\__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xdd in position 98: invalid continuation byte
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+C:\Users\User\PycharmProjects\web-app\obnimikids\catalog\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\catalog\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\catalog\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\catalog\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\catalog\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\catalog\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\catalog\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\obnimikids\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\obnimikids\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\obnimikids\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\apps.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\obnimikids\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\obnimikids\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\cart\admin.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /orders/process-order/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py", line 73, in process_order
+    send_mail(
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\__init__.py", line 88, in send_mail
+    return mail.send()
+           ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 86, in open
+    self.connection = self.connection_class(
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 837, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера
+Internal Server Error: /orders/process-order/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py", line 73, in process_order
+    send_mail(
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\__init__.py", line 88, in send_mail
+    return mail.send()
+           ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 86, in open
+    self.connection = self.connection_class(
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 837, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\apps.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\admin.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /orders/process-order/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py", line 73, in process_order
+    send_mail(subject, message, 'kurbanovazajnap796@gmail.com', [email], fail_silently=False)
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\__init__.py", line 88, in send_mail
+    return mail.send()
+           ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 86, in open
+    self.connection = self.connection_class(
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 837, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера
+C:\Users\User\PycharmProjects\web-app\obnimikids\obnimikids\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /orders/process-order/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py", line 73, in process_order
+    send_mail(subject, message, 'kurbanovazajnap796@gmail.com', [email], fail_silently=False)
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\__init__.py", line 88, in send_mail
+    return mail.send()
+           ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 86, in open
+    self.connection = self.connection_class(
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 837, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\form.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\form.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\form.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /orders/process-order/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py", line 30, in process_order
+    form.save_to_profile(request.user)
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\orders\form.py", line 29, in save_to_profile
+    profile, created = Profile.objects.get_or_create(user=user)
+                       ^^^^^^^
+NameError: name 'Profile' is not defined
+Internal Server Error: /orders/process-order/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py", line 30, in process_order
+    form.save_to_profile(request.user)
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\orders\form.py", line 29, in save_to_profile
+    profile, created = Profile.objects.get_or_create(user=user)
+                       ^^^^^^^
+NameError: name 'Profile' is not defined
+Not Found: /favicon.ico
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\form.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /orders
+Internal Server Error: /orders/process-order/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py", line 73, in process_order
+    send_mail(subject, message, 'kurbanovazajnap796@gmail.com', [email], fail_silently=False)
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\__init__.py", line 88, in send_mail
+    return mail.send()
+           ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 86, in open
+    self.connection = self.connection_class(
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 837, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера
+Internal Server Error: /orders/process-order/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py", line 73, in process_order
+    send_mail(subject, message, 'kurbanovazajnap796@gmail.com', [email], fail_silently=False)
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\__init__.py", line 88, in send_mail
+    return mail.send()
+           ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 86, in open
+    self.connection = self.connection_class(
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 837, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера
+Watching for file changes with StatReloader
+Internal Server Error: /orders/process-order/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py", line 73, in process_order
+    send_mail(subject, message, 'kurbanovazajnap796@gmail.com', [email], fail_silently=False)
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\__init__.py", line 88, in send_mail
+    return mail.send()
+           ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 86, in open
+    self.connection = self.connection_class(
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 837, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера
+Watching for file changes with StatReloader
+Internal Server Error: /orders/process-order/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py", line 73, in process_order
+    send_mail(subject, message, 'kurbanovazajnap796@gmail.com', [email], fail_silently=False)
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\__init__.py", line 88, in send_mail
+    return mail.send()
+           ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\message.py", line 301, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\mail\backends\smtp.py", line 86, in open
+    self.connection = self.connection_class(
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 1022, in __init__
+    SMTP.__init__(self, host, port, local_hostname, timeout,
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 1028, in _get_socket
+    new_socket = super()._get_socket(host, port, timeout)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 852, in create_connection
+    raise exceptions[0]
+  File "C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 837, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] Попытка установить соединение была безуспешной, т.к. от другого компьютера за требуемое время не получен нужный отклик, или было разорвано уже установленное соединение из-за неверного отклика уже подключенного компьютера
+C:\Users\User\PycharmProjects\web-app\obnimikids\obnimikids\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\obnimikids\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\form.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\apps.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\form.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\accounts\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\obnimikids\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Ошибка отправки Telegram для заказа #11: Ошибка Telegram: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+Ошибка отправки Telegram для заказа #12: Ошибка Telegram: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\signals.py changed, reloading.
+Watching for file changes with StatReloader
+Ошибка отправки Telegram для заказа #13: Ошибка Telegram: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getMe "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/deleteWebhook "HTTP/1.1 200 OK"
+Application started
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+Watching for file changes with StatReloader
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/sendMessage "HTTP/1.1 400 Bad Request"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/sendMessage "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/sendMessage "HTTP/1.1 400 Bad Request"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/sendMessage "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\form.py changed, reloading.
+Watching for file changes with StatReloader
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/sendMessage "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/sendMessage "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/sendMessage "HTTP/1.1 400 Bad Request"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/sendMessage "HTTP/1.1 400 Bad Request"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\signals.py changed, reloading.
+Watching for file changes with StatReloader
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/sendMessage "HTTP/1.1 400 Bad Request"
+Ошибка отправки уведомления о статусе для chat_id=@zawqsl: Chat not found
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+Не отправлено уведомление для заказа №16: telegram_id=
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/sendMessage "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/sendMessage "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+Не отправлено уведомление для заказа №16: telegram_id=
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+C:\Users\User\PycharmProjects\web-app\obnimikids\accounts\models.py changed, reloading.
+Watching for file changes with StatReloader
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py changed, reloading.
+Watching for file changes with StatReloader
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+Не отправлено уведомление для заказа №17: telegram_id=509241742
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/sendMessage "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/sendMessage "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/sendMessage "HTTP/1.1 200 OK"
+Уведомление о статусе отправлено: chat_id=509241742, order_id=17
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+Application is stopping. This might take a moment.
+Application.stop() complete
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getMe "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/deleteWebhook "HTTP/1.1 200 OK"
+Application started
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\telegram\ext\_application.py", line 1298, in process_update
+    await coroutine
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\telegram\ext\_handlers\basehandler.py", line 158, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\bot.py", line 30, in orders
+    if not pending_orders:
+           ^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 414, in __bool__
+    self._fetch_all()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1572, in execute_sql
+    cursor = self.connection.cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 24, in inner
+    raise SynchronousOnlyOperation(message)
+django.core.exceptions.SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\telegram\ext\_application.py", line 1298, in process_update
+    await coroutine
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\telegram\ext\_handlers\basehandler.py", line 158, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\bot.py", line 30, in orders
+    if not pending_orders:
+           ^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 414, in __bool__
+    self._fetch_all()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1572, in execute_sql
+    cursor = self.connection.cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\utils\asyncio.py", line 24, in inner
+    raise SynchronousOnlyOperation(message)
+django.core.exceptions.SynchronousOnlyOperation: You cannot call this from an async context - use a thread or sync_to_async.
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+Application is stopping. This might take a moment.
+Application.stop() complete
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getMe "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/deleteWebhook "HTTP/1.1 200 OK"
+Application started
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/sendMessage "HTTP/1.1 200 OK"
+Администратор запросил список заказов: chat_id=509241742
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/sendMessage "HTTP/1.1 400 Bad Request"
+Ошибка отправки уведомления о статусе для chat_id=@zawqsl: Chat not found
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/sendMessage "HTTP/1.1 200 OK"
+Статус заказа №12 изменён на paid администратором: chat_id=509241742
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+Application is stopping. This might take a moment.
+Application.stop() complete
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getMe "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/deleteWebhook "HTTP/1.1 200 OK"
+Application started
+Watching for file changes with StatReloader
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+Not Found: /favicon.ico
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+Not Found: /favicon.ico
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/getUpdates "HTTP/1.1 200 OK"
+Application is stopping. This might take a moment.
+Application.stop() complete
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/setWebhook "HTTP/1.1 200 OK"
