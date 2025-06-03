@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',  # Добавь перед остальными
@@ -99,6 +100,9 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
+TELEGRAM_BOT_TOKEN = config('TELEGRAM_BOT_TOKEN', default='8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o')
+ADMIN_TELEGRAM_ID = config('ADMIN_TELEGRAM_ID', default='509241742')
+
 AUTHENTICATION_BACKENDS = ['accounts.backends.EmailBackend']
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
@@ -119,8 +123,5 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-if not DEBUG:
-    # В продакшене медиафайлы будут доступны через STATIC_URL
-    MEDIA_URL = STATIC_URL + 'media/'
-# Default primary key field type
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
