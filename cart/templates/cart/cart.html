@@ -1,0 +1,64 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}OBNIMI Kids - Корзина{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'cart/css/cart.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section class="cart-section">
+        <div class="cart-container">
+            <h2>Ваша корзина</h2>
+            <meta name="csrf-token" content="{{ csrf_token }}">
+            {% if cart_items %}
+                <div class="cart-items">
+                    {% for item in cart_items %}
+                        <div class="cart-item" data-item-id="{{ item.id }}">
+                            <div class="cart-item-image">
+                                <a href="{% url 'product_detail' item.product.id %}">
+                                    {% if item.product.image %}
+                                        <img src="{{ item.product.image }}" alt="{{ item.product.name }}">
+                                    {% else %}
+                                        <img src="{% static 'catalog/images/default.png' %}" alt="Default Image">
+                                    {% endif %}
+                                </a>
+                            </div>
+                            <div class="cart-item-info">
+                                <a href="{% url 'product_detail' item.product.id %}">
+                                    <h3>{{ item.product.name }}</h3>
+                                </a>
+                                <p>Размер: {{ item.size.name }}</p>
+                                <p>Цена: {{ item.product.price }} ₽</p>
+                                <p>Итого: <span class="item-total-price">{{ item.get_total_price }} ₽</span></p>
+                            </div>
+                            <div class="cart-item-actions">
+                                <div class="quantity-controls">
+                                    <button type="button" class="quantity-btn quantity-decrease" data-item-id="{{ item.id }}" data-change="-1">-</button>
+                                    <span class="quantity-value" data-item-id="{{ item.id }}">{{ item.quantity }}</span>
+                                    <button type="button" class="quantity-btn quantity-increase" data-item-id="{{ item.id }}" data-change="1">+</button>
+                                </div>
+                                <button class="remove-btn" data-item-id="{{ item.id }}">×</button>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="cart-summary">
+                    <div class="summary-details">
+                        <p>Состав заказа:</p>
+                        <p>Товаров: <span class="cart-item-count">{{ cart_items|length }}</span></p>
+                        <p>Итого: <span class="total-price">{{ total_price }} ₽</span></p>
+                    </div>
+                    <a href="{% url 'checkout' %}" class="checkout-btn">Оформить заказ</a>
+                </div>
+            {% else %}
+                <p class="empty-cart">Ваша корзина пуста.</p>
+            {% endif %}
+        </div>
+    </section>
+
+    {% block scripts %}
+        <script src="{% static 'cart/js/cart.js' %}" defer></script>
+    {% endblock %}
+{% endblock %}
