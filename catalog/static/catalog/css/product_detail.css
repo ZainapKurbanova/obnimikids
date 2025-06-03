@@ -261,6 +261,62 @@
     color: #721c24;
 }
 
+.go-to-cart-btn {
+    padding: 12px 20px;
+    background: linear-gradient(45deg, #5c6d50, #4a5a40);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.4s ease;
+}
+
+.go-to-cart-btn:hover {
+    background: linear-gradient(45deg, #4a5a40, #3a4830);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(120, 134, 107, 0.3);
+}
+.favorite-btn {
+    padding: 10px 20px;
+    background: none;
+    border: 1px solid #78866b;
+    border-radius: 8px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #78866b;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.favorite-btn:hover {
+    background: #78866b;
+    color: #fff;
+}
+
+.favorite-btn.favorited {
+    background: #5c6d50;
+    color: #fff;
+    border-color: #5c6d50;
+}
+
+.favorite-btn.favorited:hover {
+    background: #4a5a40;
+    border-color: #4a5a40;
+}
+
+.favorite-btn i {
+    font-size: 16px;
+}
 @media (max-width: 768px) {
     .product-detail-section {
         padding: 50px 10px;
@@ -285,5 +341,230 @@
 
     .old-price {
         font-size: 16px;
+    }
+}
+/* Секция отзывов */
+.reviews-section {
+    margin-top: 40px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.reviews-section h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.review {
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.review:last-child {
+    border-bottom: none;
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.review-user {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #5c6d50;
+}
+
+.review-rating {
+    display: flex;
+    gap: 3px;
+}
+
+.review-rating i {
+    font-size: 14px;
+    color: #ddd;
+}
+
+.review-rating i.filled {
+    color: #f4c430; /* Золотистый цвет для звёзд */
+}
+
+.review-date {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: #999;
+}
+
+.review-comment {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.no-reviews {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+}
+
+/* Форма отзыва */
+.review-form {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f9fafb;
+    border-radius: 10px;
+}
+
+.review-form h4 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.rating-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.rating-selector p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #444;
+}
+
+.stars {
+    display: flex;
+    gap: 5px;
+    direction: rtl;
+}
+
+.stars input {
+    display: none;
+}
+
+.stars label {
+    cursor: pointer;
+    font-size: 20px;
+    color: #ddd;
+    transition: color 0.3s ease;
+}
+
+.stars label:hover,
+.stars label:hover ~ label,
+.stars input:checked ~ label {
+    color: #f4c430;
+}
+
+.comment-field {
+    margin-bottom: 15px;
+}
+
+.comment-field textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #444;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+.comment-field textarea:focus {
+    outline: none;
+    border-color: #78866b;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.submit-review-btn {
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #78866b, #5c6d50);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-review-btn:hover {
+    background: linear-gradient(45deg, #5c6d50, #4a5a40);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(120, 134, 107, 0.2);
+}
+
+.review-message {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Средний рейтинг */
+.rating-container {
+    margin-bottom: 10px;
+}
+
+.average-rating {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #5c6d50;
+}
+
+.average-rating i {
+    color: #f4c430;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .reviews-section {
+        padding: 15px;
+    }
+
+    .reviews-section h3 {
+        font-size: 18px;
+    }
+
+    .review-form {
+        padding: 15px;
+    }
+
+    .review-form h4 {
+        font-size: 16px;
+    }
+
+    .stars label {
+        font-size: 18px;
+    }
+
+    .comment-field textarea {
+        min-height: 80px;
+    }
+
+    .submit-review-btn {
+        font-size: 13px;
+        padding: 8px 15px;
     }
 }

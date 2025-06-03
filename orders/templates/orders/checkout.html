@@ -5,7 +5,7 @@
 
 {% block styles %}
 <link rel="stylesheet" href="{% static 'orders/css/checkout.css' %}">
-<link rel="stylesheet" href="{% static 'orders/css/common.css' %}">
+<link rel="stylesheet" href="{% static 'cart/css/cart.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -21,11 +21,10 @@
     </div>
     <div class="order-confirmation">
       {% for message in messages %}
-      {% if 'успешно оформлен' in message %}
       <p>{{ message }}</p>
-      <a href="{% url 'catalog' %}" class="continue-shopping-btn">Продолжить покупки</a>
-      {% endif %}
       {% endfor %}
+      <a href="{% url 'profile' %}" class="continue-shopping-btn">Перейти в профиль</a>
+      <a href="{% url 'catalog' %}" class="continue-shopping-btn">Продолжить покупки</a>
     </div>
     {% else %}
       {% if cart_items %}
@@ -38,14 +37,17 @@
       <form method="post" action="{% url 'process_order' %}" id="checkout-form">
         {% csrf_token %}
         {% for field in form %}
-        <div class="form-group">
-          <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %}*{% endif %}</label>
-          {{ field }}
-          <div class="suggestions" id="{{ field.id_for_label }}-suggestions" style="display: none;"></div>
-          {% if field.errors %}
-          <p class="error">{{ field.errors }}</p>
-          {% endif %}
-        </div>
+          <div class="form-group">
+            <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %}*{% endif %}</label>
+            {{ field }}
+            {% if field.id_for_label == 'id_telegram_id' %}
+            <p class="help-text">Укажите ваш Telegram ID для связи. Чтобы узнать ID, напишите нашему боту @YourShopBot команду /getid.</p>
+            {% endif %}
+            <div class="suggestions" id="{{ field.id_for_label }}-suggestions" style="display: none;"></div>
+            {% if field.errors %}
+            <p class="error">{{ field.errors }}</p>
+            {% endif %}
+          </div>
         {% endfor %}
         <button type="submit" class="submit-btn">Подтвердить заказ</button>
       </form>
@@ -59,124 +61,6 @@
 {% endblock content %}
 
 {% block scripts %}
-<script src="{% static 'cart/js/common.js' %}"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Используем id полей, заданные в форме через атрибуты виджетов: 'city-input' и 'address-detail-input'
-    const cityField = document.getElementById('city-input');
-    const detailField = document.getElementById('address-detail-input');
-    const citySug = document.getElementById('city-input-suggestions');
-    const detailSug = document.getElementById('address-detail-input-suggestions');
-    let selectedCity = cityField ? cityField.value : null;
-    let selectedDetail = null;
-
-    const token = '79da688188c12cf893b72df07cbca7bc42e54cec';
-    const api = 'https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address';
-
-    function createRequest(query, bounds) {
-      return fetch(api, {
-        method: 'POST', mode: 'cors', headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'Authorization': 'Token ' + token
-        },
-        body: JSON.stringify({ query, count: 5, ...bounds })
-      }).then(r => r.json());
-    }
-
-    function show(items, type) {
-      const field = type === 'city' ? cityField : detailField;
-      const container = type === 'city' ? citySug : detailSug;
-      container.innerHTML = '';
-      if (!items || !items.length) { container.style.display = 'none'; return; }
-      items.forEach(s => {
-        const val = type === 'city'
-          ? s.data.city
-          : s.value.replace(s.data.city + ', ', '');
-        if (!val) return;
-        const div = document.createElement('div');
-        div.className = 'suggestion-item';
-        div.textContent = val;
-        div.addEventListener('click', () => {
-          field.value = val;
-          if (type === 'city') {
-            selectedCity = val;
-            detailField.value = '';
-            selectedDetail = null;
-          } else {
-            selectedDetail = val;
-          }
-          container.style.display = 'none';
-        });
-        container.appendChild(div);
-      });
-      container.style.display = 'block';
-    }
-
-    let timer;
-    if (cityField) {
-      cityField.addEventListener('input', () => {
-        clearTimeout(timer);
-        selectedCity = null;
-        timer = setTimeout(() => {
-          if (!cityField.value) {
-            citySug.style.display = 'none';
-            return;
-          }
-          createRequest(cityField.value, {
-            locations: [{ country: 'Россия' }],
-            from_bound: { value: 'city' },
-            to_bound: { value: 'city' }
-          }).then(res => show(res.suggestions, 'city'));
-        }, 300);
-      });
-    }
-
-    if (detailField) {
-      detailField.addEventListener('input', () => {
-        if (!selectedCity) {
-          alert('Выберите город из списка');
-          detailField.value = '';
-          return;
-        }
-        clearTimeout(timer);
-        selectedDetail = null;
-        timer = setTimeout(() => {
-          if (!detailField.value) {
-            detailSug.style.display = 'none';
-            return;
-          }
-          createRequest(`${selectedCity}, ${detailField.value}`, {
-            locations: [{ city: selectedCity }],
-            from_bound: { value: 'street' },
-            to_bound: { value: 'flat' }
-          }).then(res => show(res.suggestions, 'detail'));
-        }, 300);
-      });
-    }
-
-    document.addEventListener('click', e => {
-      if (cityField && !cityField.contains(e.target) && !citySug.contains(e.target)) {
-        citySug.style.display = 'none';
-      }
-      if (detailField && !detailField.contains(e.target) && !detailSug.contains(e.target)) {
-        detailSug.style.display = 'none';
-      }
-    });
-
-    const form = document.getElementById('checkout-form');
-    if (form) {
-      form.addEventListener('submit', e => {
-        if (!selectedCity) {
-          e.preventDefault();
-          alert('Пожалуйста, выберите город из списка');
-        }
-        if (!selectedDetail) {
-          e.preventDefault();
-          alert('Пожалуйста, выберите детальный адрес из списка');
-        }
-      });
-    }
-  });
-</script>
+<script src="{% static 'cart/js/cart.js' %}" defer></script>
+<script src="{% static 'orders/js/checkout.js' %}" defer></script>
 {% endblock scripts %}

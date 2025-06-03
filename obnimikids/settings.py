@@ -1,5 +1,7 @@
 from pathlib import Path
 import os
+import dj_database_url
+from decouple import config
 # Build paths inside the project like this: BASE_DIR / "subdir".
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -10,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-xfgn(50^dhqt#m@6e-v@3j9q$squgmvf2)i%e-z0i!p^f@^wb&')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
+DEBUG = 'True'
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1,obnimikids.onrender.com,obnimikids.ru,www.obnimikids.ru').split(',')
 
@@ -20,6 +22,7 @@ INSTALLED_APPS = [
     'catalog',
     'cart',
     'orders',
+    'favorites',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,7 +42,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 ROOT_URLCONF = 'obnimikids.urls'
 
@@ -62,14 +65,30 @@ TEMPLATES = [
 WSGI_APPLICATION = 'obnimikids.wsgi.application'
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME', 'obnimikids_db'),
-        'USER': os.getenv('DB_USER', 'obnimikids_user'),
-        'PASSWORD': os.getenv('DB_PASSWORD', 'G4dE5DZV6i2x3DSHEoKdn8jQZx3GHh1S'),
-        'HOST': os.getenv('DB_HOST', 'dpg-d0tmti3e5dus7382hq70-a'),
-        'PORT': os.getenv('DB_PORT', '5432'),
-    }
+    'default': dj_database_url.config(default=config('DATABASE_URL'))
+}
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+        },
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log',
+        },
+    },
+    'loggers': {
+        '': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
 }
 
 # Password validation
@@ -88,6 +107,10 @@ LANGUAGE_CODE = 'ru'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
+
+
+TELEGRAM_BOT_TOKEN = config('TELEGRAM_BOT_TOKEN', default='8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o')
+ADMIN_TELEGRAM_ID = config('ADMIN_TELEGRAM_ID', default='509241742')
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'

@@ -1,73 +1,66 @@
-/* static/accounts/css/profile.css */
 .profile-section {
     padding: 80px 20px;
     max-width: 1200px;
-    margin: 0 auto;
-    background: linear-gradient(135deg, #f0f4f7 0%, #e6f3e6 100%);
+    background: linear-gradient(180deg, #f8f8f8 0%, #f0f4f7 50%, #e6f3e6 100%); /* Такой же градиент, как в auth-section */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: calc(100vh - 480px);
-    position: relative;
-    overflow: hidden;
 }
 
-/* Фон с лёгкой анимацией */
+/* Убираем анимацию фона */
 .profile-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 30% 30%, rgba(120, 134, 107, 0.1), transparent 50%);
-    animation: subtlePulse 10s ease-in-out infinite;
-}
-
-@keyframes subtlePulse {
-    0%, 100% { opacity: 0.3; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(1.05); }
+    display: none;
 }
 
 .profile-container {
-    max-width: 600px;
+    width: 500px; /* Такая же ширина, как в auth-container */
     margin: 0 auto;
+    background: #ffffff; /* Чисто белый фон */
     padding: 40px;
-    border-radius: 20px;
-    position: relative;
-    animation: slideIn 0.6s ease-out;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px; /* Закругление как в auth-container */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 0 15px rgba(120, 134, 107, 0.05); /* Тень как в auth-container */
+    border: 1px solid rgba(120, 134, 107, 0.1); /* Граница как в auth-container */
+    animation: fadeIn 0.8s ease-in-out; /* Такая же анимация, как в auth-container */
 }
 
+/* Убираем стеклянный эффект */
 .glass-effect {
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 8px 32px rgba(120, 134, 107, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: none;
 }
 
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 .profile-container h2 {
     font-family: 'Raleway', sans-serif;
-    font-size: 32px;
-    font-weight: 700;
-    color: #2e2e2e;
-    margin-bottom: 30px;
+    font-size: 28px; /* Как в auth-container */
+    font-weight: 600; /* Как в auth-container */
+    color: #444; /* Как в auth-container */
+    margin-bottom: 25px; /* Как в auth-container */
+    text-transform: uppercase; /* Как в auth-container */
+    letter-spacing: 1.5px; /* Как в auth-container */
+    position: relative;
     text-align: center;
-    letter-spacing: 1px;
-    background: linear-gradient(to right, #78866b, #5c6d50);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    text-shadow: 0 1px 3px rgba(120, 134, 107, 0.1); /* Как в auth-container */
+}
+
+.profile-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 50px;
+    height: 2px;
+    background: #78866b;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.profile-container h2:hover::after {
+    width: 70px;
 }
 
 .profile-info h3 {
@@ -86,37 +79,37 @@
 }
 
 .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    text-align: left; /* Как в auth-form */
     position: relative;
 }
 
 .form-group label {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
+    color: #666; /* Как в auth-form */
+    display: block;
+    margin-bottom: 8px;
     font-weight: 500;
-    color: #555;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .form-group input {
-    width: 100%;
-    padding: 12px 15px;
-    border: none;
-    border-radius: 10px;
     font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    padding: 12px 15px 12px 15px; /* Убираем отступ для иконки, так как её нет */
     font-size: 14px;
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+    border: 1px solid #ddd; /* Как в auth-form */
+    border-radius: 8px; /* Как в auth-form */
+    box-sizing: border-box;
+    background: #fafafa; /* Как в auth-form */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-group input:focus {
+
+    border-color: #78866b; /* Как в auth-form */
+    box-shadow: 0 0 10px rgba(120, 134, 107, 0.2); /* Как в auth-form */
     outline: none;
-    box-shadow: 0 0 0 3px rgba(120, 134, 107, 0.3);
-    background: rgba(255, 255, 255, 1);
-    transform: scale(1.02);
 }
 
 .form-group .error {
@@ -133,7 +126,6 @@
     margin-top: 10px;
 }
 
-/* Стили для автоматически сгенерированных Django радиокнопок */
 .gender-selector ul {
     list-style: none;
     display: flex;
@@ -160,7 +152,7 @@
 .gender-selector label {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
-    color: #555;
+    color: #666; /* Как в auth-form */
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -179,7 +171,7 @@
     height: 16px;
     border: 2px solid #78866b;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.8);
+    background: #fafafa; /* Как в auth-form */
     transition: all 0.3s ease;
     pointer-events: none;
 }
@@ -187,7 +179,7 @@
 .gender-selector input[type="radio"]:checked + label::before {
     border-color: #5c6d50;
     background: #5c6d50;
-    box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0 0 0 3px #ffffff; /* Белый внутренний круг */
 }
 
 .gender-selector input[type="radio"]:checked + label {
@@ -200,60 +192,61 @@
 }
 
 .profile-btn {
-    background: linear-gradient(45deg, #78866b, #5c6d50);
-    color: #fff;
     padding: 14px;
+    background: linear-gradient(45deg, #78866b, #5c6d50); /* Как в auth-btn */
+    color: #fff;
     border: none;
-    border-radius: 12px;
+    border-radius: 8px; /* Как в auth-btn */
     font-family: 'Raleway', sans-serif;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
-    transition: all 0.3s ease;
 }
 
 .profile-btn::before {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 0;
+    left: 0;
     width: 0;
-    height: 0;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: width 0.6s ease, height 0.6s ease;
-}
-
-.profile-btn:hover::before {
-    width: 300px;
-    height: 300px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    transition: width 0.4s ease;
 }
 
 .profile-btn:hover {
+    background: linear-gradient(45deg, #5c6d50, #4a5a40); /* Как в auth-btn */
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(120, 134, 107, 0.4);
+    box-shadow: 0 8px 20px rgba(120, 134, 107, 0.3);
+}
+
+.profile-btn:hover::before {
+    width: 100%;
 }
 
 .profile-link {
-    display: block;
-    text-align: center;
-    margin-top: 20px;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
-    color: #78866b;
-    text-decoration: none;
-    transition: all 0.3s ease;
+    color: #666; /* Как в auth-link */
+    margin-top: 15px;
+    text-align: center;
 }
 
-.profile-link:hover {
+.profile-link a {
+    color: #78866b;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.profile-link a:hover {
     color: #5c6d50;
     text-decoration: underline;
-    transform: translateY(-1px);
 }
 
 /* Стили для вкладок */
@@ -270,7 +263,7 @@
     font-family: 'Raleway', sans-serif;
     font-size: 16px;
     font-weight: 600;
-    color: #555;
+    color: #666; /* Как в auth-link */
     padding: 10px 20px;
     cursor: pointer;
     position: relative;
@@ -279,19 +272,11 @@
 
 .tab-button.active {
     color: #5c6d50;
-    background: linear-gradient(to right, #78866b, #5c6d50);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    border-bottom: 2px solid #5c6d50; /* Убираем градиент текста */
 }
 
 .tab-button.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(45deg, #78866b, #5c6d50);
+    display: none; /* Убираем градиентную линию */
 }
 
 .tab-button:hover {
@@ -307,15 +292,6 @@
     animation: fadeIn 0.5s ease-in-out;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
 /* Стили для списка заказов */
 .orders-list {
     display: flex;
@@ -324,8 +300,8 @@
 }
 
 .order-item {
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
+    background: #ffffff; /* Чисто белый фон */
+    border-radius: 8px; /* Как в auth-form */
     padding: 15px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
@@ -411,19 +387,20 @@
     margin-top: 20px;
 }
 
+/* Адаптивность */
 @media (max-width: 768px) {
     .profile-section {
         padding: 50px 10px;
+        min-height: calc(100vh - 400px);
     }
 
     .profile-container {
-        padding: 20px;
+        padding: 25px;
         max-width: 100%;
-        border-radius: 15px;
     }
 
     .profile-container h2 {
-        font-size: 26px;
+        font-size: 22px;
     }
 
     .profile-info h3 {
@@ -436,7 +413,7 @@
     }
 
     .form-group input {
-        padding: 10px;
+        padding: 10px 15px;
     }
 
     .gender-selector {
@@ -467,6 +444,7 @@
         height: 30px;
     }
 }
+
 .autocomplete-wrapper {
     position: relative;
 }
@@ -476,10 +454,9 @@
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 10px;
+    background: #ffffff; /* Чисто белый фон */
+    border-radius: 8px; /* Как в auth-form */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
     border: 1px solid rgba(120, 134, 107, 0.2);
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;

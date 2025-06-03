@@ -2,10 +2,19 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.http import HttpResponse
-from django.core.mail import send_mail
 from cart.models import CartItem
 from .form import CheckoutForm
 from .models import Order, OrderItem
+from telegram import Bot
+from django.conf import settings
+import asyncio
+
+async def send_telegram_message(chat_id, message):
+    bot = Bot(token=settings.TELEGRAM_BOT_TOKEN)
+    try:
+        await bot.send_message(chat_id=chat_id, text=message, parse_mode='HTML')
+    except Exception as e:
+        print(f"Ошибка отправки в Telegram: {e}")
 
 @login_required
 def checkout_view(request):
@@ -26,6 +35,7 @@ def process_order(request):
             email = form.cleaned_data['email']
             phone = form.cleaned_data['phone']
             delivery_method = form.cleaned_data['delivery_method']
+            telegram_id = form.cleaned_data.get('telegram_id')  # Поле для Telegram ID, если добавлено в форму
 
             form.save_to_profile(request.user)
 
@@ -44,6 +54,7 @@ def process_order(request):
                 address_detail=address_detail,
                 email=email,
                 phone=phone,
+                telegram_id=telegram_id,
                 total_price=total_price,
                 delivery_method=delivery_method,
                 delivery_cost=delivery_cost,
@@ -61,11 +72,35 @@ def process_order(request):
 
             cart_items.delete()
 
-            subject = f'Заказ #{order.id} успешно оформлен'
-            message = f'Здравствуйте, {name}!\n\nВаш заказ на сумму {order.get_total_with_delivery()} ₽ успешно оформлен.\nМы свяжемся с вами для подтверждения.\n\nС уважением,\nOBNIMI Kids'
-            send_mail(subject, message, 'your-email@gmail.com', [email], fail_silently=False)
+            # Сообщение клиенту
+            client_message = (
+                f"Здравствуйте, {name}!\n\n"
+                f"Ваш заказ №{order.id} на сумму {order.get_total_with_delivery()} ₽ успешно оформлен.\n"
+                f"Для оплаты с вами свяжется администратор в Telegram.\n"
+                f"Статус заказа вы можете отслеживать в личном кабинете.\n\n"
+                f"С уважением,\nOBNIMI Kids"
+            )
 
-            messages.success(request, f"Заказ на сумму {order.get_total_with_delivery()} ₽ успешно оформлен! Переходите к оплате.")
+            # Сообщение администратору
+            admin_message = (
+                f"Новый заказ №{order.id}!\n"
+                f"Клиент: {name}\n"
+                f"Телефон: {phone}\n"
+                f"Email: {email}\n"
+                f"Сумма: {order.get_total_with_delivery()} ₽\n"
+                f"Статус: Ожидает оплаты"
+            )
+
+            # Асинхронная отправка сообщений
+            if telegram_id:
+                asyncio.run(send_telegram_message(telegram_id, client_message))
+            asyncio.run(send_telegram_message(settings.ADMIN_TELEGRAM_ID, admin_message))
+
+            messages.success(
+                request,
+                "Заказ успешно оформлен! Но требует оплаты! Для оплаты с вами свяжется администратор в Telegram. "
+                "Статус можете отслеживать в личном кабинете."
+            )
             return redirect('checkout')
         else:
             cart_items = CartItem.objects.filter(user=request.user)

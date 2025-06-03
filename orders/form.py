@@ -1,46 +1,45 @@
+# orders/form.py
 from django import forms
-from django.contrib.auth import get_user_model
 from accounts.models import UserProfile
 
-User = get_user_model()
-
 class CheckoutForm(forms.Form):
-    DELIVERY_CHOICES = [
-        ('post', 'Почта России (300 ₽, 7-14 дней)'),
-        ('courier', 'Курьер (500 ₽, 1-3 дня)'),
-    ]
+    name = forms.CharField(max_length=100, required=True, label="Имя")
+    city = forms.CharField(max_length=100, required=True, label="Город", widget=forms.TextInput(attrs={'id': 'city-input'}))
+    address_detail = forms.CharField(max_length=255, required=True, label="Детальный адрес", widget=forms.TextInput(attrs={'id': 'address-detail-input'}))
+    email = forms.EmailField(required=True, label="E-mail")
+    phone = forms.CharField(max_length=20, required=True, label="Телефон", help_text="Введите номер в формате +79991234567")
+    telegram_id = forms.CharField(max_length=50, required=False, label="Telegram ID (необязательно)")
+    delivery_method = forms.ChoiceField(
+        choices=[('post', 'Почта России'), ('courier', 'Курьер')],
+        widget=forms.RadioSelect,
+        required=True,
+        label="Способ доставки"
+    )
 
-    name = forms.CharField(max_length=100, required=True, label="Имя", widget=forms.TextInput(attrs={'readonly': 'readonly'}))
-    city = forms.CharField(max_length=100, required=True, label="Город", widget=forms.TextInput(attrs={'id': 'city-input', 'autocomplete': 'off'}))
-    address_detail = forms.CharField(max_length=255, required=True, label="Детальный адрес", widget=forms.TextInput(attrs={'id': 'address-detail-input', 'autocomplete': 'off'}))
-    email = forms.EmailField(required=True, label="E-mail", widget=forms.EmailInput(attrs={'readonly': 'readonly'}))
-    phone = forms.CharField(max_length=20, required=True, label="Телефон", widget=forms.TextInput(attrs={'placeholder': '+7 (___) ___-__-__'}))
-    delivery_method = forms.ChoiceField(choices=DELIVERY_CHOICES, required=True, label="Способ доставки", widget=forms.RadioSelect)
+    def clean_phone(self):
+        phone = self.cleaned_data['phone']
+        if not phone.startswith('+'):
+            raise forms.ValidationError("Номер телефона должен начинаться с '+' (например, +79991234567).")
+        return phone
+
 
     def __init__(self, user, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        if user.is_authenticated:
-            self.fields['name'].initial = user.get_full_name() or user.first_name or ''
+        self.user = user
+        profile = UserProfile.objects.filter(user=user).first()
+        if profile:
+            self.fields['name'].initial = profile.first_name
+            self.fields['city'].initial = profile.city
             self.fields['email'].initial = user.email
-            try:
-                profile = user.profile
-                if profile.phone:
-                    self.fields['phone'].initial = profile.phone
-                if profile.city:
-                    self.fields['city'].initial = profile.city
-            except UserProfile.DoesNotExist:
-                pass
+            self.fields['phone'].initial = profile.phone
+            self.fields['telegram_id'].initial = profile.telegram_id if hasattr(profile, 'telegram_id') else ''
 
     def save_to_profile(self, user):
-        if user.is_authenticated:
-            try:
-                profile, created = UserProfile.objects.get_or_create(user=user)
-                phone = self.cleaned_data.get('phone')
-                city = self.cleaned_data.get('city')
-                if phone and not profile.phone:
-                    profile.phone = phone
-                if city and not profile.city:
-                    profile.city = city
-                profile.save()
-            except Exception as e:
-                print(f"Ошибка при сохранении в профиль: {e}")
+        profile, created = UserProfile.objects.get_or_create(user=user)
+        profile.first_name = self.cleaned_data['name']
+        profile.city = self.cleaned_data['city']
+        profile.phone = self.cleaned_data['phone']
+        profile.telegram_id = self.cleaned_data['telegram_id']
+        profile.save()
+        user.email = self.cleaned_data['email']
+        user.save()

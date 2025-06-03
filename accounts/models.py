@@ -50,6 +50,7 @@ class UserProfile(models.Model):
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=True, verbose_name='Пол')
     birth_date = models.DateField(null=True, blank=True, verbose_name='Дата рождения')
     city = models.CharField(max_length=100, blank=True, verbose_name='Город')
+    telegram_id = models.CharField(max_length=100, blank=True)
     phone = models.CharField(
         max_length=12,
         blank=True,
@@ -71,5 +72,6 @@ class Order(models.Model):
     delivery_date = models.DateField()
     status = models.CharField(max_length=20, default='Выполнен')
     total = models.DecimalField(max_digits=10, decimal_places=2)
+    telegram_id = models.CharField(max_length=50, blank=True)
     def __str__(self):
         return f"Заказ №{self.order_number} от {self.order_date}"

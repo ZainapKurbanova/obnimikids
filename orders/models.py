@@ -7,6 +7,7 @@ User = get_user_model()
 class Order(models.Model):
     STATUS_CHOICES = [
         ('pending', 'Ожидает оплаты'),
+        ('paid', 'Оплата прошла'),
         ('processing', 'В обработке'),
         ('shipped', 'Отправлен'),
         ('delivered', 'Доставлен'),
@@ -24,6 +25,7 @@ class Order(models.Model):
     address_detail = models.CharField(max_length=255, verbose_name="Детальный адрес")
     email = models.EmailField(verbose_name="E-mail")
     phone = models.CharField(max_length=20, verbose_name="Телефон")
+    telegram_id = models.CharField(max_length=50, blank=True, verbose_name="Telegram ID")
     total_price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Общая сумма")
     delivery_method = models.CharField(max_length=20, choices=DELIVERY_CHOICES, default='post', verbose_name="Способ доставки")
     delivery_cost = models.DecimalField(max_digits=10, decimal_places=2, default=0, verbose_name="Стоимость доставки")
@@ -40,10 +42,12 @@ class Order(models.Model):
     def get_total_with_delivery(self):
         return self.total_price + self.delivery_cost
 
+    def get_status_display(self):
+        return dict(self.STATUS_CHOICES).get(self.status, 'Неизвестен')
+
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='items', verbose_name="Заказ")
     product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name="Товар")
-    color = models.CharField(max_length=50, verbose_name="Цвет", default="Не указан")
     size = models.ForeignKey(Size, on_delete=models.SET_NULL, null=True, verbose_name="Размер")
     quantity = models.PositiveIntegerField(default=1, verbose_name="Количество")
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Цена")
@@ -53,4 +57,5 @@ class OrderItem(models.Model):
         verbose_name_plural = "Элементы заказа"
 
     def __str__(self):
-        return f"{self.product.name} (Цвет: {self.color}, Размер: {self.size}, Количество: {self.quantity}) в заказе {self.order.id}"
+        return f"{self.product.name} в заказе {self.order.id}"
+

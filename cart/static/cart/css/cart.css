@@ -48,9 +48,14 @@
     flex: 0 0 100px;
 }
 
+.cart-item-image a {
+    display: block; /* Убеждаемся, что ссылка занимает весь блок изображения */
+    text-decoration: none; /* Убираем подчёркивание */
+}
+
 .cart-item-image img {
     width: 100%;
-    height: auto;
+    height: 100px;
     border-radius: 6px;
     object-fit: cover;
 }
@@ -58,6 +63,15 @@
 .cart-item-info {
     flex: 1;
     padding-left: 15px;
+}
+
+.cart-item-info a {
+    text-decoration: none; /* Убираем подчёркивание у названия */
+    color: inherit; /* Сохраняем цвет текста */
+}
+
+.cart-item-info a:hover h3 {
+    color: #5c6d50; /* Лёгкий эффект при наведении на название */
 }
 
 .cart-item-info h3 {
@@ -156,7 +170,7 @@
     padding: 12px 25px;
     background: linear-gradient(45deg, #78866b, #5c6d50);
     color: #fff;
-    border-radius: 25px;
+    border-radius: 8px;
     font-family: 'Raleway', sans-serif;
     font-size: 16px;
     font-weight: 600;
@@ -182,7 +196,34 @@
     background: #fafafa;
     border-radius: 8px;
 }
+.custom-alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #78866b;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    font-family: 'Raleway', sans-serif;
+    z-index: 1000;
+}
 
+.custom-alert.success {
+    background: #5c6d50;
+}
+
+.custom-alert.error {
+    background: #d9534f;
+}
+
+.custom-alert.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 @media (max-width: 768px) {
     .cart-section {
         padding: 40px 10px;

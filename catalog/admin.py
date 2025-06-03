@@ -11,14 +11,13 @@ logger = logging.getLogger(__name__)
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('name', 'color', 'price', 'created_at')
-    list_filter = ('color', 'created_at')
+    list_display = ('name', 'color', 'category', 'price', 'created_at')  # Добавляем category в список
+    list_filter = ('color', 'category', 'created_at')  # Добавляем фильтр по категории
     search_fields = ('name', 'description')
 
     def save_model(self, request, obj, form, change):
         logger.info(f"Начало сохранения товара: {obj.name}, image_file: {obj.image_file}")
         if 'image_file' in form.changed_data and obj.image_file:
-            # Проверяем путь и существование файла
             logger.info(f"Путь к файлу: {obj.image_file.path}")
             if not os.path.exists(obj.image_file.path):
                 logger.error(f"Файл не найден: {obj.image_file.path}")
@@ -27,7 +26,6 @@ class ProductAdmin(admin.ModelAdmin):
                 super().save_model(request, obj, form, change)
                 return
 
-            # Проверяем API-ключ
             imgbb_api_key = config('IMGBB_API_KEY')
             if not imgbb_api_key:
                 logger.error("API-ключ ImgBB отсутствует")
@@ -35,14 +33,12 @@ class ProductAdmin(admin.ModelAdmin):
                 return
             logger.info(f"Используемый API-ключ: {imgbb_api_key}")
 
-            # Генерируем имя файла
             ext = obj.image_file.name.split('.')[-1]
             name = slugify(obj.name, allow_unicode=False)
             unique_id = uuid.uuid4().hex[:8]
             filename = f"{name}-{unique_id}.{ext}"
             logger.info(f"Генерируем имя файла: {filename}")
 
-            # Подготовка и отправка запроса
             url = "https://api.imgbb.com/1/upload"
             try:
                 with open(obj.image_file.path, 'rb') as image_file:
@@ -62,7 +58,6 @@ class ProductAdmin(admin.ModelAdmin):
                 self.message_user(request, f"Ошибка загрузки в ImgBB: {e}", level='error')
                 return
 
-            # Обработка ответа
             data = response.json()
             logger.info(f"JSON-ответ от ImgBB: {data}")
             if data.get('success'):
@@ -73,7 +68,6 @@ class ProductAdmin(admin.ModelAdmin):
                 self.message_user(request, f"Ошибка ImgBB: {data.get('status_text')}", level='error')
                 return
 
-            # Удаление временного файла
             try:
                 if os.path.exists(obj.image_file.path):
                     os.remove(obj.image_file.path)
