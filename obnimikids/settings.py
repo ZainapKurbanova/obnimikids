@@ -112,10 +112,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-
-TELEGRAM_BOT_TOKEN = config('TELEGRAM_BOT_TOKEN', default='8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o')
-ADMIN_TELEGRAM_ID = config('ADMIN_TELEGRAM_ID', default='509241742')
-
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'  

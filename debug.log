@@ -2459,3 +2459,511 @@ HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriw
 Application is stopping. This might take a moment.
 Application.stop() complete
 HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/setWebhook "HTTP/1.1 200 OK"
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\obnimikids\telegram_views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\obnimikids\telegram_bot.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Не отправлено уведомление для заказа №18: telegram_id=7838947332
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/sendMessage "HTTP/1.1 400 Bad Request"
+HTTP Request: POST https://api.telegram.org/bot8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o/sendMessage "HTTP/1.1 200 OK"
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\obnimikids\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /orders/admin
+Not Found: /orders/admin/orders/
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /orders/admin/orders/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py", line 92, in admin_orders
+    total_revenue = sum(order.get_total_with_delivery() for order in orders)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 400, in __iter__
+    self._fetch_all()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 1930, in _fetch_all
+    self._prefetch_related_objects()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 1320, in _prefetch_related_objects
+    prefetch_related_objects(self._result_cache, *self._prefetch_related_lookups)
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\query.py", line 2355, in prefetch_related_objects
+    raise AttributeError(
+AttributeError: Cannot find 'orderitem_set' on Order object, 'orderitem_set' is an invalid parameter to prefetch_related()
+Not Found: /order/admin/orders
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /orders/admin/order
+Internal Server Error: /orders/admin/orders/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py", line 101, in admin_orders
+    order.save()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\base.py", line 892, in save
+    self.save_base(
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\base.py", line 1013, in save_base
+    post_save.send(
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\dispatch\dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\orders\signals.py", line 27, in order_status_changed
+    if instance.status in ['paid', 'shipped', 'delivered'] and instance.telegram_id:
+                                                               ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Order' object has no attribute 'telegram_id'
+Internal Server Error: /orders/admin/orders/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py", line 101, in admin_orders
+    order.save()
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\base.py", line 892, in save
+    self.save_base(
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\db\models\base.py", line 1013, in save_base
+    post_save.send(
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\dispatch\dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\orders\signals.py", line 30, in order_status_changed
+    logger.warning(f"Не отправлено уведомление для заказа №{instance.id}: telegram_id={instance.telegram_id}")
+                                                                                       ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Order' object has no attribute 'telegram_id'
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\apps.py changed, reloading.
+Watching for file changes with StatReloader
+Статус заказа #12 изменён на pending
+Статус заказа #3 изменён на paid
+Статус заказа #3 изменён на shipped
+Статус заказа #3 изменён на shipped
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /admin/dashboard/
+Not Found: /orders/admin/user/None/orders/
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /orders/admin/orders/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /orders/admin/user/None/orders/
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\obnimikids\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /orders/admin/user/None/orders/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /orders/admin/user/zai.kurbanova12@mail.ru/orders/
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Статус заказа #19 изменён на cancelled
+Статус заказа #19 изменён на cancelled
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\cart\views.py", line 45, in cart_view
+    return render(request, 'cart/cart.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'remove_from_cart' not found. 'remove_from_cart' is not a valid view function or pattern name.
+Internal Server Error: /cart/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\cart\views.py", line 45, in cart_view
+    return render(request, 'cart/cart.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'remove_from_cart' not found. 'remove_from_cart' is not a valid view function or pattern name.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+C:\Users\User\PycharmProjects\web-app\obnimikids\accounts\models.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\form.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /orders/checkout/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py", line 25, in checkout_view
+    form = CheckoutForm(user=request.user)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\orders\form.py", line 34, in __init__
+    self.fields['telegram_id'].initial = profile.telegram_id if hasattr(profile, 'telegram_id') else ''
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'telegram_id'
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Internal Server Error: /orders/checkout/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py", line 25, in checkout_view
+    form = CheckoutForm(user=request.user)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\orders\form.py", line 34, in __init__
+    self.fields['telegram_id'].initial = profile.telegram_id if hasattr(profile, 'telegram_id') else ''
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'telegram_id'
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Internal Server Error: /orders/checkout/
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\orders\views.py", line 25, in checkout_view
+    form = CheckoutForm(user=request.user)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\PycharmProjects\web-app\obnimikids\orders\form.py", line 34, in __init__
+    self.fields['telegram_id'].initial = profile.telegram_id if hasattr(profile, 'telegram_id') else ''
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'telegram_id'
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+C:\Users\User\PycharmProjects\web-app\obnimikids\orders\form.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+C:\Users\User\PycharmProjects\web-app\obnimikids\cart\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\User\PycharmProjects\web-app\obnimikids\cart\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+C:\Users\User\PycharmProjects\web-app\obnimikids\cart\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+C:\Users\User\PycharmProjects\web-app\obnimikids\cart\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /favicon.ico
+Статус заказа #20 изменён на delivered

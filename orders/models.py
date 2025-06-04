@@ -25,7 +25,6 @@ class Order(models.Model):
     address_detail = models.CharField(max_length=255, verbose_name="Детальный адрес")
     email = models.EmailField(verbose_name="E-mail")
     phone = models.CharField(max_length=20, verbose_name="Телефон")
-    telegram_id = models.CharField(max_length=50, blank=True, verbose_name="Telegram ID")
     total_price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Общая сумма")
     delivery_method = models.CharField(max_length=20, choices=DELIVERY_CHOICES, default='post', verbose_name="Способ доставки")
     delivery_cost = models.DecimalField(max_digits=10, decimal_places=2, default=0, verbose_name="Стоимость доставки")

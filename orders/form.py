@@ -8,7 +8,6 @@ class CheckoutForm(forms.Form):
     address_detail = forms.CharField(max_length=255, required=True, label="Детальный адрес", widget=forms.TextInput(attrs={'id': 'address-detail-input'}))
     email = forms.EmailField(required=True, label="E-mail")
     phone = forms.CharField(max_length=20, required=True, label="Телефон", help_text="Введите номер в формате +79991234567")
-    telegram_id = forms.CharField(max_length=50, required=False, label="Telegram ID (необязательно)")
     delivery_method = forms.ChoiceField(
         choices=[('post', 'Почта России'), ('courier', 'Курьер')],
         widget=forms.RadioSelect,
@@ -32,14 +31,12 @@ class CheckoutForm(forms.Form):
             self.fields['city'].initial = profile.city
             self.fields['email'].initial = user.email
             self.fields['phone'].initial = profile.phone
-            self.fields['telegram_id'].initial = profile.telegram_id if hasattr(profile, 'telegram_id') else ''
 
     def save_to_profile(self, user):
         profile, created = UserProfile.objects.get_or_create(user=user)
         profile.first_name = self.cleaned_data['name']
         profile.city = self.cleaned_data['city']
         profile.phone = self.cleaned_data['phone']
-        profile.telegram_id = self.cleaned_data['telegram_id']
         profile.save()
         user.email = self.cleaned_data['email']
         user.save()

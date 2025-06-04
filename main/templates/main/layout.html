@@ -51,6 +51,13 @@
                         <i class="fas fa-shopping-bag" aria-hidden="true"></i>
                     </a>
                 </li>
+                {% if user.is_authenticated and user.is_superuser %}
+                    <li class="nav-item">
+                        <a href="http://127.0.0.1:8000/orders/admin/dashboard/" class="nav-link {% if request.path == '/orders/admin/dashboard/' %}active{% endif %}">
+                            <i class="fas fa-tachometer-alt" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
     </nav>

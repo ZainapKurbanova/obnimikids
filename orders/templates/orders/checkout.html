@@ -37,17 +37,14 @@
       <form method="post" action="{% url 'process_order' %}" id="checkout-form">
         {% csrf_token %}
         {% for field in form %}
-          <div class="form-group">
-            <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %}*{% endif %}</label>
-            {{ field }}
-            {% if field.id_for_label == 'id_telegram_id' %}
-            <p class="help-text">Укажите ваш Telegram ID для связи. Чтобы узнать ID, напишите нашему боту @YourShopBot команду /getid.</p>
-            {% endif %}
-            <div class="suggestions" id="{{ field.id_for_label }}-suggestions" style="display: none;"></div>
-            {% if field.errors %}
-            <p class="error">{{ field.errors }}</p>
-            {% endif %}
-          </div>
+        <div class="form-group">
+          <label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %}*{% endif %}</label>
+          {{ field }}
+          <div class="suggestions" id="{{ field.id_for_label }}-suggestions" style="display: none;"></div>
+          {% if field.errors %}
+          <p class="error">{{ field.errors }}</p>
+          {% endif %}
+        </div>
         {% endfor %}
         <button type="submit" class="submit-btn">Подтвердить заказ</button>
       </form>

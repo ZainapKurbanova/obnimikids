@@ -5,7 +5,95 @@ from django.contrib import messages
 from django.views.decorators.http import require_POST
 from django.http import JsonResponse
 from catalog.models import Product, Size
+from orders.models import Order, OrderItem
 from .models import CartItem
+import pandas as pd
+from mlxtend.frequent_patterns import apriori, association_rules
+from mlxtend.preprocessing import TransactionEncoder
+import random
+
+@login_required
+def cart_view(request):
+    cart_items = CartItem.objects.filter(user=request.user).select_related('product', 'size')
+    total_price = sum(item.get_total_price() for item in cart_items)
+
+    # Получаем ID товаров в корзине
+    cart_product_ids = [item.product.id for item in cart_items]
+    print("Товары в корзине:", cart_product_ids)  # Отладка
+
+    # Получаем данные заказов для построения рекомендаций
+    orders = Order.objects.all().prefetch_related('items__product')
+    transactions = []
+    for order in orders:
+        transaction = [item.product.id for item in order.items.all()]
+        if transaction:
+            transactions.append(transaction)
+    print("Транзакции:", transactions)  # Отладка
+
+    # Инициализируем список рекомендаций
+    suggested_products = []
+    if transactions and cart_product_ids:
+        try:
+            te = TransactionEncoder()
+            te_ary = te.fit(transactions).transform(transactions)
+            df = pd.DataFrame(te_ary, columns=te.columns_)
+
+            # Применяем алгоритм Apriori
+            frequent_itemsets = apriori(df, min_support=0.001, use_colnames=True)
+            print("Частые наборы:", frequent_itemsets)  # Отладка
+
+            if not frequent_itemsets.empty:
+                rules = association_rules(frequent_itemsets, metric="confidence", min_threshold=0.05)
+                print("Правила:", rules)  # Отладка
+
+                recommended_product_ids = set()
+                for product_id in cart_product_ids:
+                    relevant_rules = rules[rules['antecedents'].apply(lambda x: product_id in x)]
+                    if not relevant_rules.empty:
+                        for consequents in relevant_rules['consequents']:
+                            for consequent in consequents:
+                                if consequent not in cart_product_ids:
+                                    recommended_product_ids.add(consequent)
+                print("Рекомендованные ID товаров:", recommended_product_ids)  # Отладка
+
+                suggested_products = Product.objects.filter(id__in=recommended_product_ids)
+        except Exception as e:
+            print("Ошибка при генерации рекомендаций:", e)
+
+    # Если рекомендаций меньше 5, дополняем рандомными товарами из той же категории
+    if suggested_products or cart_items:
+        target_count = 5
+        if suggested_products:
+            suggested_products = list(suggested_products)[:target_count]  # Ограничиваем до 5
+        else:
+            suggested_products = []
+
+        if len(suggested_products) < target_count and cart_items:
+            # Получаем категории товаров в корзине
+            categories = set(item.product.category for item in cart_items if item.product.category)
+            if categories:
+                # Выбираем рандомные товары из тех же категорий
+                all_products_in_categories = Product.objects.filter(category__in=categories).exclude(id__in=cart_product_ids)
+                if all_products_in_categories.exists():
+                    remaining_count = target_count - len(suggested_products)
+                    random_products = random.sample(list(all_products_in_categories), min(remaining_count, all_products_in_categories.count()))
+                    suggested_products.extend(random_products)
+
+        # Убеждаемся, что всего не больше 5
+        suggested_products = suggested_products[:target_count]
+
+    # Если совсем нет рекомендаций, используем популярные товары как запасной вариант
+    if not suggested_products and cart_items:
+        categories = set(item.product.category for item in cart_items if item.product.category)
+        if categories:
+            suggested_products = list(Product.objects.filter(category__in=categories).exclude(id__in=cart_product_ids).order_by('?')[:target_count])
+
+    context = {
+        'cart_items': cart_items,
+        'total_price': total_price,
+        'suggested_products': suggested_products,
+    }
+    return render(request, 'cart/cart.html', context)
 
 @login_required
 @require_POST
@@ -36,13 +124,6 @@ def add_to_cart(request, product_id):
         'message': f'Товар {product.name} добавлен в корзину!',
         'product_id': product_id
     })
-
-@login_required
-def cart_view(request):
-    cart_items = CartItem.objects.filter(user=request.user).select_related('product', 'size')
-    total_price = sum(item.get_total_price() for item in cart_items)
-    context = {'cart_items': cart_items, 'total_price': total_price}
-    return render(request, 'cart/cart.html', context)
 
 @login_required
 @require_POST
