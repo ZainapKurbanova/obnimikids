@@ -34,16 +34,25 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function urlB64ToUint8Array(base64String) {
-    console.log('Converting base64String:', base64String);  // Отладка
-    const padding = '='.repeat((4 - base64String.length % 4) % 4);
-    const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
-    const rawData = window.atob(base64);
-    const outputArray = new Uint8Array(rawData.length);
-    for (let i = 0; i < rawData.length; ++i) {
-        outputArray[i] = rawData.charCodeAt(i);
+    console.log('Input base64String:', base64String);
+    if (!base64String) {
+        console.error('base64String is empty or undefined');
+        return new Uint8Array(0);
     }
-    console.log('Converted to Uint8Array:', outputArray);
-    return outputArray;
+    const padding = '='.repeat((4 - base64String.length % 4) % 4);
+    const base64 = (base64String + padding).replace(/\-/g, '+').replace(/_/g, '/');
+    try {
+        const rawData = atob(base64);
+        const output = new Uint8Array(rawData.length);
+        for (let i = 0; i < rawData.length; i++) {
+            output[i] = rawData.charCodeAt(i);
+        }
+        console.log('Converted Uint8Array:', output);
+        return output;
+    } catch (e) {
+        console.error('Error converting base64 to Uint8Array:', e);
+        return new Uint8Array(0);
+    }
 }
 
 function getCookie(name) {
