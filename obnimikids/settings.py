@@ -92,6 +92,29 @@ LOGGING = {
     },
 }
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+        },
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log',
+        },
+    },
+    'loggers': {
+        '': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
+}
+
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
@@ -100,8 +123,6 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-TELEGRAM_BOT_TOKEN = config('TELEGRAM_BOT_TOKEN', default='8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o')
-ADMIN_TELEGRAM_ID = config('ADMIN_TELEGRAM_ID', default='509241742')
 
 AUTHENTICATION_BACKENDS = ['accounts.backends.EmailBackend']
 AUTH_USER_MODEL = 'accounts.CustomUser'
@@ -111,6 +132,10 @@ LANGUAGE_CODE = 'ru'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
+
+
+TELEGRAM_BOT_TOKEN = config('TELEGRAM_BOT_TOKEN', default='8003810268:AAGP5lsPyGlJG8kj-dYriwvqh-3a8y9Fi0o')
+ADMIN_TELEGRAM_ID = config('ADMIN_TELEGRAM_ID', default='509241742')
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
