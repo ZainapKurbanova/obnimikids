@@ -19,7 +19,7 @@ function urlBase64ToUint8Array(base64String) {
 async function subscribeToPush() {
     if ('serviceWorker' in navigator && 'PushManager' in window) {
         try {
-            const registration = await navigator.serviceWorker.register('/static/js/sw.js');
+            const registration = await navigator.serviceWorker.register('sw.js');
             console.log('Service Worker зарегистрирован:', registration);
 
             const permission = await Notification.requestPermission();
