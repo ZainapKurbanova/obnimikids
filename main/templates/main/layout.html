@@ -72,6 +72,12 @@
         <p><i class="fab fa-whatsapp" style="color: white;"></i> +7 937 622-73-47</p>
         <p><i class="fab fa-instagram" style="color: white;"></i> <a href="https://www.instagram.com/obnimi.kids/">obnimi.kids</a></p>
     </section>
-    {% block scripts %}{% endblock %}
+    {% block scripts %}
+    <script>
+        const vapidPublicKey = "{{ VAPID_PUBLIC_KEY }}";
+        console.log('vapidPublicKey:', vapidPublicKey);
+    </script>
+    <script src="{% static 'main/js/push-notifications.js' %}"></script>
+    {% endblock %}
 </body>
 </html>

@@ -1,4 +1,3 @@
-// orders/static/orders/js/checkout.js
 document.addEventListener('DOMContentLoaded', () => {
     // Используем id полей, заданные в форме через атрибуты виджетов: 'city-input' и 'address-detail-input'
     const cityField = document.getElementById('city-input');
