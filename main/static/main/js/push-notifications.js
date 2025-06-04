@@ -1,71 +1,55 @@
-document.addEventListener('DOMContentLoaded', function() {
-    if ('serviceWorker' in navigator && 'PushManager' in window) {
-        navigator.serviceWorker.register('/sw.js')
-            .then(function(registration) {
-                console.log('Service Worker зарегистрирован:', registration);
-                return registration.pushManager.subscribe({
-                    userVisibleOnly: true,
-                    applicationServerKey: urlB64ToUint8Array(vapidPublicKey)
-                });
-            })
-            .then(function(subscription) {
-                console.log('Подписка получена:', subscription);
-                fetch('/notifications/subscribe/', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRFToken': getCookie('csrftoken'),
-                    },
-                    body: JSON.stringify(subscription)
-                })
-                .then(response => {
-                    console.log('Ответ сервера:', response);
-                    return response.json();
-                })
-                .then(data => console.log('Устройство зарегистрировано:', data))
-                .catch(error => console.error('Ошибка регистрации:', error));
-            })
-            .catch(function(error) {
-                console.error('Ошибка регистрации Service Worker:', error);
-            });
-    } else {
-        console.warn('Push-уведомления не поддерживаются.');
-    }
-});
-
-function urlB64ToUint8Array(base64String) {
-    console.log('Input base64String:', base64String);
-    if (!base64String) {
-        console.error('base64String is empty or undefined');
-        return new Uint8Array(0);
-    }
-    const padding = '='.repeat((4 - base64String.length % 4) % 4);
-    const base64 = (base64String + padding).replace(/\-/g, '+').replace(/_/g, '/');
+// static/main/js/push-notifications.js
+function urlBase64ToUint8Array(base64String) {
     try {
-        const rawData = atob(base64);
-        const output = new Uint8Array(rawData.length);
-        for (let i = 0; i < rawData.length; i++) {
-            output[i] = rawData.charCodeAt(i);
+        console.log('Input base64String:', base64String);
+        const cleanedBase64 = base64String.trim();
+        const rawData = window.atob(cleanedBase64);
+        const outputArray = new Uint8Array(rawData.length);
+        for (let i = 0; i < rawData.length; ++i) {
+            outputArray[i] = rawData.charCodeAt(i);
         }
-        console.log('Converted Uint8Array:', output);
-        return output;
+        console.log('Converted to Uint8Array:', outputArray);
+        return outputArray;
     } catch (e) {
-        console.error('Error converting base64 to Uint8Array:', e);
-        return new Uint8Array(0);
+        console.error('Ошибка в urlBase64ToUint8Array:', e);
+        throw e;
     }
 }
 
-function getCookie(name) {
-    let cookieValue = null;
-    if (document.cookie && document.cookie !== '') {
-        const cookies = document.cookie.split(';');
-        for (let i = 0; i < cookies.length; i++) {
-            const cookie = cookies[i].trim();
-            if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
+async function subscribeToPush() {
+    if ('serviceWorker' in navigator && 'PushManager' in window) {
+        try {
+            const registration = await navigator.serviceWorker.register('/static/js/sw.js');
+            console.log('Service Worker зарегистрирован:', registration);
+
+            const permission = await Notification.requestPermission();
+            if (permission !== 'granted') {
+                console.log('Разрешение на уведомления не получено');
+                return;
             }
+
+            console.log('Using VAPID public key:', VAPID_PUBLIC_KEY);
+            const subscription = await registration.pushManager.subscribe({
+                userVisibleOnly: true,
+                applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC_KEY)
+            });
+            console.log('Подписка создана:', subscription);
+
+            await fetch('/subscribe/', {
+                method: 'POST',
+                body: JSON.stringify(subscription),
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+                }
+            });
+            console.log('Подписка отправлена на сервер');
+        } catch (error) {
+            console.error('Ошибка подписки:', error);
         }
+    } else {
+        console.log('Push API или Service Worker не поддерживаются');
     }
-    return cookieValue;
 }
+
+document.addEventListener('DOMContentLoaded', subscribeToPush);
