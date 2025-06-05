@@ -103,14 +103,6 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-WEBPUSH_SETTINGS = {
-    "VAPID_PUBLIC_KEY": config("VAPID_PUBLIC_KEY"),
-    "VAPID_PRIVATE_KEY": config("VAPID_PRIVATE_KEY"),
-    "VAPID_ADMIN_EMAIL": config("VAPID_ADMIN_EMAIL"),
-}
-
-VAPID_PUBLIC_KEY = "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAESPhBStBVzeRU/1m6uuU+LIVpx6EB2+O+FZMmlD1m9T+kAo4Ukf+dWwDCaGeMJnItIXAjXYWSIlOK9ADxjdMc7w=="
-
 AUTHENTICATION_BACKENDS = ['accounts.backends.EmailBackend']
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
