@@ -1,3 +1,4 @@
+# orders/views.py
 from django.contrib.auth import get_user_model
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required, user_passes_test
@@ -8,6 +9,7 @@ from .form import CheckoutForm
 from .models import Order, OrderItem
 from django.db.models import Count
 import logging
+from push_notifications.models import WebPushDevice
 
 logger = logging.getLogger(__name__)
 
@@ -72,7 +74,26 @@ def process_order(request):
 
             cart_items.delete()
 
-            return redirect('order_success', order_id=order.id)
+            # Отправляем уведомление администраторам
+            admins = get_user_model().objects.filter(is_superuser=True)
+            for admin in admins:
+                devices = WebPushDevice.objects.filter(user=admin)
+                for device in devices:
+                    try:
+                        device.send_message({
+                            "title": "Новый заказ",
+                            "body": f"Пользователь {request.user.email} создал заказ #{order.id}",
+                            "url": f"/orders/admin/{request.user.username}/",
+                        })
+                    except Exception as e:
+                        logger.error(f"Ошибка отправки уведомления администратору {admin.email}: {e}")
+
+            messages.success(
+                request,
+                "Ваш заказ оформлен! С вами в течение 30 минут свяжется администратор для оплаты! "
+                "За заказом можете отследить в личном кабинете."
+            )
+            return redirect('profile')
         else:
             cart_items = CartItem.objects.filter(user=request.user)
             total_price = sum(item.get_total_price() for item in cart_items)
@@ -80,10 +101,6 @@ def process_order(request):
             return render(request, 'orders/checkout.html', context)
     return HttpResponse("Метод не поддерживается", status=405)
 
-@login_required
-def order_success(request, order_id):
-    order = get_object_or_404(Order, pk=order_id, user=request.user)
-    return render(request, 'orders/order_success.html', {'order_id': order.id})
 
 @login_required
 @user_passes_test(is_admin)
@@ -132,10 +149,25 @@ def admin_user_orders(request, username):
         new_status = request.POST.get('status')
         try:
             order = Order.objects.get(id=order_id)
+            old_status = order.status
             order.status = new_status
             order.save()
             logger.info(f"Статус заказа #{order_id} изменён на {new_status}")
             messages.success(request, f"Статус заказа #{order_id} успешно обновлён.")
+
+            # Отправляем уведомление пользователю
+            if old_status != new_status:
+                devices = WebPushDevice.objects.filter(user=order.user)
+                status_display = order.get_status_display()
+                for device in devices:
+                    try:
+                        device.send_message({
+                            "title": "Обновление статуса заказа",
+                            "body": f"Статус вашего заказа #{order.id} изменён на: {status_display}",
+                            "url": "/profile/",
+                        })
+                    except Exception as e:
+                        logger.error(f"Ошибка отправки уведомления пользователю {order.user.email}: {e}")
         except Order.DoesNotExist:
             messages.error(request, "Заказ не найден.")
 
@@ -144,3 +176,4 @@ def admin_user_orders(request, username):
         'orders': orders,
     }
     return render(request, 'orders/admin_user_orders.html', context)
+
