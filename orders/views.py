@@ -9,7 +9,7 @@ from .form import CheckoutForm
 from .models import Order, OrderItem
 from django.db.models import Count
 import logging
-from push_notifications.models import WebPushDevice
+
 
 logger = logging.getLogger(__name__)
 
