@@ -13,8 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-xfgn(50^dhqt#m@6e-v@3j9q$squgmvf2)i%e-z0i!p^f@^wb&')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True  # Исправлено: строка 'True' заменена на булево значение True
-
+DEBUG = False
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1,obnimikids.onrender.com,obnimikids.ru,www.obnimikids.ru').split(',')
 
 INSTALLED_APPS = [
@@ -58,7 +57,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'obnimikids.context_processors.vapid_public_key',
             ],
         },
     },
