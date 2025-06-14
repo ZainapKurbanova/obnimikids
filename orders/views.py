@@ -1,4 +1,3 @@
-# orders/views.py
 from django.contrib.auth import get_user_model
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required, user_passes_test
@@ -8,16 +7,14 @@ from cart.models import CartItem
 from .form import CheckoutForm
 from .models import Order, OrderItem
 from django.db.models import Count
+from telegram import Bot
+from django.conf import settings
 import logging
-
 
 logger = logging.getLogger(__name__)
 
-
-# Проверка, является ли пользователь администратором
 def is_admin(user):
     return user.is_authenticated and user.is_superuser
-
 
 @login_required
 def checkout_view(request):
@@ -26,7 +23,6 @@ def checkout_view(request):
     form = CheckoutForm(user=request.user)
     context = {'cart_items': cart_items, 'total_price': total_price, 'form': form}
     return render(request, 'orders/checkout.html', context)
-
 
 @login_required
 def process_order(request):
@@ -74,19 +70,16 @@ def process_order(request):
 
             cart_items.delete()
 
-            # Отправляем уведомление администраторам
-            admins = get_user_model().objects.filter(is_superuser=True)
-            for admin in admins:
-                devices = WebPushDevice.objects.filter(user=admin)
-                for device in devices:
-                    try:
-                        device.send_message({
-                            "title": "Новый заказ",
-                            "body": f"Пользователь {request.user.email} создал заказ #{order.id}",
-                            "url": f"/orders/admin/{request.user.username}/",
-                        })
-                    except Exception as e:
-                        logger.error(f"Ошибка отправки уведомления администратору {admin.email}: {e}")
+            # Telegram уведомление админу
+            try:
+                bot = Bot(token=settings.TELEGRAM_BOT_TOKEN)
+                for chat_id in settings.TELEGRAM_ADMIN_CHAT_IDS:
+                    bot.send_message(
+                        chat_id=chat_id,
+                        text=f"📦 Новый заказ #{order.id}\n👤 Пользователь: @{request.user.username}\n📧 Email: {request.user.email}"
+                    )
+            except Exception as e:
+                logger.error(f"Ошибка при отправке Telegram-сообщения: {e}")
 
             messages.success(
                 request,
@@ -101,30 +94,20 @@ def process_order(request):
             return render(request, 'orders/checkout.html', context)
     return HttpResponse("Метод не поддерживается", status=405)
 
-
 @login_required
 @user_passes_test(is_admin)
 def admin_dashboard(request):
-    # Список пользователей с заказами
     users_with_orders = Order.objects.values('user__username', 'user__email').annotate(
         order_count=Count('id')).order_by('-order_count')
-    # Статистика
     total_orders = Order.objects.count()
     total_revenue = sum(order.get_total_with_delivery() for order in Order.objects.all())
-
-    # Получаем статусы и их количество
     status_counts = Order.objects.values('status').annotate(count=Count('id')).order_by('status')
-
-    # Создаём словарь для перевода статусов
-    status_display_map = dict(Order.STATUS_CHOICES)  # {'pending': 'Ожидает оплаты', ...}
+    status_display_map = dict(Order.STATUS_CHOICES)
     status_labels = [status_display_map[item['status']] for item in status_counts]
     status_data = [item['count'] for item in status_counts]
-
-    # Топ-5 товаров
     top_products = OrderItem.objects.values('product__name').annotate(total=Count('product')).order_by('-total')[:5]
     top_products_labels = [item['product__name'] for item in top_products]
     top_products_data = [item['total'] for item in top_products]
-
     context = {
         'users_with_orders': users_with_orders,
         'total_orders': total_orders,
@@ -135,7 +118,6 @@ def admin_dashboard(request):
         'top_products_data': top_products_data,
     }
     return render(request, 'orders/admin_dashboard.html', context)
-
 
 @login_required
 @user_passes_test(is_admin)
@@ -155,19 +137,16 @@ def admin_user_orders(request, username):
             logger.info(f"Статус заказа #{order_id} изменён на {new_status}")
             messages.success(request, f"Статус заказа #{order_id} успешно обновлён.")
 
-            # Отправляем уведомление пользователю
-            if old_status != new_status:
-                devices = WebPushDevice.objects.filter(user=order.user)
-                status_display = order.get_status_display()
-                for device in devices:
-                    try:
-                        device.send_message({
-                            "title": "Обновление статуса заказа",
-                            "body": f"Статус вашего заказа #{order.id} изменён на: {status_display}",
-                            "url": "/profile/",
-                        })
-                    except Exception as e:
-                        logger.error(f"Ошибка отправки уведомления пользователю {order.user.email}: {e}")
+            # Telegram уведомление пользователю
+            try:
+                bot = Bot(token=settings.TELEGRAM_BOT_TOKEN)
+                bot.send_message(
+                    chat_id=order.user.telegram_chat_id,
+                    text=f"🔄 Статус вашего заказа #{order.id} изменён на: {order.get_status_display()}"
+                )
+            except Exception as e:
+                logger.error(f"Ошибка при отправке Telegram-уведомления: {e}")
+
         except Order.DoesNotExist:
             messages.error(request, "Заказ не найден.")
 
@@ -176,4 +155,3 @@ def admin_user_orders(request, username):
         'orders': orders,
     }
     return render(request, 'orders/admin_user_orders.html', context)
-
