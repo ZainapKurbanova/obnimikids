@@ -1,7 +1,6 @@
 import json
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from django.contrib import messages
 from django.views.decorators.http import require_POST
 from django.http import JsonResponse
 from catalog.models import Product, Size
@@ -14,23 +13,22 @@ import random
 
 @login_required
 def cart_view(request):
+    items = CartItem.objects.filter(user=request.user).select_related('product', 'size')
+    total_price = sum(item.get_total_price() for item in items)
+    return render(request, 'cart/cart.html', {'cart_items': items, 'total_price': total_price})
+
+
+@login_required
+def cart_view(request):
     cart_items = CartItem.objects.filter(user=request.user).select_related('product', 'size')
     total_price = sum(item.get_total_price() for item in cart_items)
-
-    # Получаем ID товаров в корзине
     cart_product_ids = [item.product.id for item in cart_items]
-    print("Товары в корзине:", cart_product_ids)  # Отладка
-
-    # Получаем данные заказов для построения рекомендаций
     orders = Order.objects.all().prefetch_related('items__product')
     transactions = []
     for order in orders:
         transaction = [item.product.id for item in order.items.all()]
         if transaction:
             transactions.append(transaction)
-    print("Транзакции:", transactions)  # Отладка
-
-    # Инициализируем список рекомендаций
     suggested_products = []
     if transactions and cart_product_ids:
         try:
@@ -38,13 +36,10 @@ def cart_view(request):
             te_ary = te.fit(transactions).transform(transactions)
             df = pd.DataFrame(te_ary, columns=te.columns_)
 
-            # Применяем алгоритм Apriori
             frequent_itemsets = apriori(df, min_support=0.001, use_colnames=True)
-            print("Частые наборы:", frequent_itemsets)  # Отладка
-
             if not frequent_itemsets.empty:
-                rules = association_rules(frequent_itemsets, metric="confidence", min_threshold=0.05)
-                print("Правила:", rules)  # Отладка
+                rules = association_rules(frequent_itemsets, metric="confidence",
+                                          min_threshold=0.05)
 
                 recommended_product_ids = set()
                 for product_id in cart_product_ids:
@@ -60,7 +55,6 @@ def cart_view(request):
         except Exception as e:
             print("Ошибка при генерации рекомендаций:", e)
 
-    # Если рекомендаций меньше 5, дополняем рандомными товарами из той же категории
     if suggested_products or cart_items:
         target_count = 5
         if suggested_products:
@@ -69,32 +63,24 @@ def cart_view(request):
             suggested_products = []
 
         if len(suggested_products) < target_count and cart_items:
-            # Получаем категории товаров в корзине
             categories = set(item.product.category for item in cart_items if item.product.category)
             if categories:
-                # Выбираем рандомные товары из тех же категорий
                 all_products_in_categories = Product.objects.filter(category__in=categories).exclude(id__in=cart_product_ids)
                 if all_products_in_categories.exists():
                     remaining_count = target_count - len(suggested_products)
                     random_products = random.sample(list(all_products_in_categories), min(remaining_count, all_products_in_categories.count()))
                     suggested_products.extend(random_products)
-
-        # Убеждаемся, что всего не больше 5
         suggested_products = suggested_products[:target_count]
-
-    # Если совсем нет рекомендаций, используем популярные товары как запасной вариант
     if not suggested_products and cart_items:
         categories = set(item.product.category for item in cart_items if item.product.category)
         if categories:
             suggested_products = list(Product.objects.filter(category__in=categories).exclude(id__in=cart_product_ids).order_by('?')[:target_count])
-
     context = {
         'cart_items': cart_items,
         'total_price': total_price,
         'suggested_products': suggested_products,
     }
     return render(request, 'cart/cart.html', context)
-
 @login_required
 @require_POST
 def add_to_cart(request, product_id):
@@ -171,3 +157,4 @@ def remove_item(request, item_id):
         return JsonResponse({'success': False, 'error': 'Товар не найден'}, status=404)
     except Exception as e:
         return JsonResponse({'success': False, 'error': str(e)}, status=500)
+

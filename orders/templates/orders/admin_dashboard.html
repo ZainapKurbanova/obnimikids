@@ -78,7 +78,6 @@
 {% block scripts %}
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-  // График распределения статусов
   const statusCtx = document.getElementById('status-pie-chart').getContext('2d');
   new Chart(statusCtx, {
     type: 'pie',
@@ -97,8 +96,6 @@
       }
     }
   });
-
-  // График топ-5 товаров
   const topProductsCtx = document.getElementById('top-products-bar-chart').getContext('2d');
   new Chart(topProductsCtx, {
     type: 'bar',
@@ -112,7 +109,7 @@
     },
     options: {
       responsive: true,
-      maintainAspectRatio: false, // Позволяет управлять размером вручную
+      maintainAspectRatio: false,
       plugins: {
         legend: { position: 'top' },
         title: { display: true, text: 'Топ-5 популярных товаров' }
@@ -121,13 +118,13 @@
         y: {
           beginAtZero: true,
           ticks: {
-            font: { size: 14 } // Увеличим размер шрифта для читаемости
+            font: { size: 14 }
           }
         },
         x: {
           ticks: {
-            font: { size: 14 }, // Увеличим размер шрифта для меток
-            maxRotation: 0, // Уберем поворот меток
+            font: { size: 14 },
+            maxRotation: 0,
             minRotation: 0
           }
         }

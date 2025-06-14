@@ -34,15 +34,12 @@ def product_detail(request, product_id):
 
     if request.user.is_authenticated:
         is_favorite = Favorite.objects.filter(user=request.user, product=product).exists()
-        # Проверяем, покупал ли пользователь товар
         has_purchased = OrderItem.objects.filter(
             order__user=request.user,
             product=product,
-            order__status__in=['delivered', 'shipped']  # Учитываем только завершённые заказы
+            order__status__in=['delivered', 'shipped']
         ).exists()
-        # Проверяем, оставлял ли пользователь уже отзыв
         has_reviewed = Review.objects.filter(user=request.user, product=product).exists()
-        # Пользователь может оставить отзыв, если покупал товар и ещё не оставлял отзыв
         can_review = has_purchased and not has_reviewed
 
     if request.method == 'POST':
@@ -65,7 +62,7 @@ def product_detail(request, product_id):
                     rating=rating,
                     comment=comment
                 )
-                product.update_average_rating()  # Обновляем средний рейтинг
+                product.update_average_rating()
                 messages.success(request, 'Ваш отзыв успешно добавлен!')
                 return redirect('product_detail', product_id=product_id)
 

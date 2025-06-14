@@ -1,20 +1,21 @@
+// static/js/sw.js
 self.addEventListener('push', function(event) {
-    const data = event.data ? event.data.json() : {};
+    console.log('Получено push-событие:', event);
+    const data = event.data.json();
     const options = {
-        body: data.body || 'Новое уведомление!',
-        icon: '/static/images/notification-icon.png',  // Укажи путь к иконке
-        data: { url: data.url || '/' },
+        body: data.body,
+        icon: '/static/main/images/logo.png',
+        data: { url: data.url }
     };
-
     event.waitUntil(
-        self.registration.showNotification(data.title || 'OBNIMI Kids', options)
+        self.registration.showNotification(data.title, options)
     );
 });
 
 self.addEventListener('notificationclick', function(event) {
+    console.log('Уведомление кликнуто:', event);
     event.notification.close();
-    const url = event.notification.data.url || '/';
     event.waitUntil(
-        clients.openWindow(url)
+        clients.openWindow(event.notification.data.url)
     );
 });

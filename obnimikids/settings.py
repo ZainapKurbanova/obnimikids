@@ -22,10 +22,9 @@ INSTALLED_APPS = [
     'accounts',
     'catalog',
     'cart',
-    'orders',
+    'orders.apps.OrdersConfig',
     'favorites',
-    'notifications',
-    'push_notifications',
+    'telegram_bot',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -60,7 +59,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'obnimikids.context_processors.vapid_public_key',
             ],
         },
     },
@@ -103,14 +101,6 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-WEBPUSH_SETTINGS = {
-    "VAPID_PUBLIC_KEY": config("VAPID_PUBLIC_KEY"),
-    "VAPID_PRIVATE_KEY": config("VAPID_PRIVATE_KEY"),
-    "VAPID_ADMIN_EMAIL": config("VAPID_ADMIN_EMAIL"),
-}
-
-VAPID_PUBLIC_KEY = "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAESPhBStBVzeRU/1m6uuU+LIVpx6EB2+O+FZMmlD1m9T+kAo4Ukf+dWwDCaGeMJnItIXAjXYWSIlOK9ADxjdMc7w=="
-
 AUTHENTICATION_BACKENDS = ['accounts.backends.EmailBackend']
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
@@ -120,7 +110,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 

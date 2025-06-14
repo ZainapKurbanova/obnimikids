@@ -17,13 +17,21 @@ class Product(models.Model):
         ('babies_3_12', 'Малыши (3 – 12 месяцев)'),
     ]
 
-    name = models.CharField(max_length=100, verbose_name="Название")
+    name = models.CharField(max_length=100,
+                            verbose_name="Название")
     description = models.TextField(verbose_name="Описание")
-    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Цена")
-    old_price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, verbose_name="Старая цена")
-    image = models.URLField(max_length=500, verbose_name="Ссылка на изображение", blank=True, null=True)
-    image_file = models.FileField(upload_to='temp/', verbose_name="Изображение", blank=True, null=True)
-    sizes = models.ManyToManyField(Size, verbose_name="Размеры", blank=True)
+    price = models.DecimalField(max_digits=10,
+                                decimal_places=2, verbose_name="Цена")
+    old_price = models.DecimalField(max_digits=10,
+                                    decimal_places=2, null=True,
+                                    blank=True, verbose_name="Старая цена")
+    image = models.URLField(max_length=500,
+                            verbose_name="Ссылка на изображение",
+                            blank=True, null=True)
+    image_file = models.FileField(upload_to='temp/',
+                                  verbose_name="Изображение", blank=True, null=True)
+    sizes = models.ManyToManyField(Size, verbose_name="Размеры",
+                                   blank=True)
     color = models.CharField(max_length=50, verbose_name="Цвет", default="Не указан")
     category = models.CharField(
         max_length=20,

@@ -30,6 +30,7 @@ class Order(models.Model):
     delivery_cost = models.DecimalField(max_digits=10, decimal_places=2, default=0, verbose_name="Стоимость доставки")
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending', verbose_name="Статус")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
+    tg_chat_id = models.CharField(max_length=32, blank=True, null=True)
 
     class Meta:
         verbose_name = "Заказ"

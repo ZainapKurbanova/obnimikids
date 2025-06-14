@@ -14,7 +14,6 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ('name', 'color', 'category', 'price', 'created_at')  # Добавляем category в список
     list_filter = ('color', 'category', 'created_at')  # Добавляем фильтр по категории
     search_fields = ('name', 'description')
-
     def save_model(self, request, obj, form, change):
         logger.info(f"Начало сохранения товара: {obj.name}, image_file: {obj.image_file}")
         if 'image_file' in form.changed_data and obj.image_file:
